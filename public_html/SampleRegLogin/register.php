@@ -1,12 +1,12 @@
 <form method="post">
 	<label for="email">Email
-	<input type="email" id="email" name="email"/>
+	<input type="email" id="email" name="email" value/>
 	</label>
 	<label for="p">Password
-	<input type="password" id="p" name="password"/>
+	<input type="password" id="p" name="password" value/>
 	</label>
 	<label for="cp">Confirm Password
-	<input type="password" id="cp" name="cpassword"/>
+	<input type="password" id="cp" name="cpassword" value/>
 	</label>
 	<input type="submit" name="register" value="Register"/>
 </form>
