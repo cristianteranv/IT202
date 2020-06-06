@@ -1,9 +1,9 @@
 <form method="post">
 	<label for="email">Email
-	<input type="email" id="email" name="email" value=""/>
+	<input type="email" id="email" name="email"/>
 	</label>
 	<label for="p">Password
-	<input type="password" id="p" name="password" value=""/>
+	<input type="password" id="p" name="password"/>
 	</label>
 	<label for="cp">Confirm Password
 	<input type="password" id="cp" name="cpassword"/>
@@ -26,10 +26,11 @@ if(isset($_POST["register"])){
 			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 			try{
 				$db = new PDO($connection_string, $dbuser, $dbpass);
+				$hash = password_hash($password, PASSWORD_BCRYPT);
 				$stmt = $db->prepare("INSERT INTO Users (email, password) VALUES(:email, :password)");
 				$stmt->execute(array(
 					":email" => $email,
-					":password" => $password
+					":password" => $hash
 				));
 				$e = $stmt->errorInfo();
 				if($e[0] != "00000"){
