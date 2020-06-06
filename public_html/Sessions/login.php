@@ -9,6 +9,7 @@
 </form>
 
 <?php
+session_start();
 #echo var_export($_GET, true);
 #echo var_export($_POST, true);
 #echo var_export($_REQUEST, true);
@@ -34,7 +35,15 @@ if(isset($_POST["login"])){
 				if ($result){
 					$rpassword = $result["password"];
 					if(password_verify($password,$rpassword)){
-						echo "<div>Passwords matched. You kind of logged in</div>";
+						echo "<div>Passwords matched. You kind of logged in</div>"; 
+						$_SESSION["user"] = array(
+							"id" => $result["id"],
+							"email" => $result["email"],
+							"first_name" => $result["first_name"],
+							"last_name" => $result["last_name"]
+						);
+						echo var_export($_SESSION,true);
+						echo "<a href='home.php'>Go to home page.</a>";
 					}
 					else{
 						echo "<div>Intruder!</div>";
