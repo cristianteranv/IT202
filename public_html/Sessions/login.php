@@ -1,3 +1,7 @@
+<?php
+include("header.php");
+?>
+<h4>Login</h4>
 <form method="post">
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
@@ -9,7 +13,6 @@
 </form>
 
 <?php
-session_start();
 #echo var_export($_GET, true);
 #echo var_export($_POST, true);
 #echo var_export($_REQUEST, true);
@@ -18,7 +21,7 @@ if(isset($_POST["login"])){
 		$password = $_POST["password"];
 		$cpassword = $_POST["cpassword"];
 		$email = $_POST['email'];
-		require("config.php");
+		#require("config.php");
 		$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 		try{
 			$db = new PDO($connection_string, $dbuser, $dbpass);
@@ -43,7 +46,7 @@ if(isset($_POST["login"])){
 							"last_name" => $result["last_name"]
 						);
 						echo var_export($_SESSION,true);
-						echo "<a href='home.php'>Go to home page.</a>";
+						header("Location: home.php"); #THIS MAY CAUSE ISSUES. COMMENT OUT IF NECESSARY
 					}
 					else{
 						echo "<div>Intruder!</div>";

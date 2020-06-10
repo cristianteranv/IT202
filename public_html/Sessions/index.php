@@ -1,1 +1,4 @@
-<?php echo "test";?>
+<?php
+    include("header.php");
+    echo "test";
+?>
