@@ -6,8 +6,7 @@ label{
 }
 form {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     text-align: center;
 }
 body{
