@@ -1,18 +1,14 @@
 input{
     background-color: pink;
 }
-label{
-    border: 1px black;
-    width: 100%;
-}
+
 form {
     width: 50%;
     margin: auto;
     text-align: center;
+
 }
-body{
-    background-color: turquoise;
-}
+
 h1{
     text-align: center;
     margin: auto;
