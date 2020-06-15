@@ -1,11 +1,8 @@
-input{
-    background-color: pink;
-}
-
 form {
     width: 50%;
     margin: 10px auto auto;
     text-align: center;
+    border: 1px black;
 }
 
 h1{
