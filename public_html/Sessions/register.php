@@ -56,7 +56,7 @@ if(isset($_POST["register"])){
         }
 	}
 	else{
-	    echo "<div>We are here.</div>";
+	    echo "<div>Either email, password or confirmation password variables are not set, sorry.</div>";
     }
 }
 ?>
