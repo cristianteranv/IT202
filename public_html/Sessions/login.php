@@ -14,13 +14,14 @@ include("header.php");
     }
     label{
         margin: auto;
+        width: 100%;
     }
 </style>
 <div>
 <form method="post">
-	<label for="email">Email
+	<label for="email">Email</label>
 	<input type="email" id="email" name="email" placeholder="Your email"/>
-    </label>
+
 	<label for="p">Password
 	<input type="password" id="p" name="password" placeholder="Your password"/>
     </label>
