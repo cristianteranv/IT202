@@ -8,15 +8,18 @@ include("header.php");
         background-color: pink;
         padding: 20px;
     }
+    label{
+        margin: auto;
+    }
 </style>
 <div>
 <form method="post">
-	<label for="email">Email</label>
+	<label for="email">Email
 	<input type="email" id="email" name="email" placeholder="Your email"/>
-
-	<label for="p">Password</label>
+    </label>
+	<label for="p">Password
 	<input type="password" id="p" name="password" placeholder="Your password"/>
-
+    </label>
 	<input type="submit" name="login" value="Login"/>
 </form>
 </div>
