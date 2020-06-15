@@ -3,12 +3,12 @@ include("header.php");
 ?>
 <h1>Login</h1>
 <form method="post">
-	<label for="email">Email
+	<label for="email">Email</label>
 	<input type="email" id="email" name="email" placeholder="Your email"/>
-	</label>
-	<label for="p">Password
+
+	<label for="p">Password</label>
 	<input type="password" id="p" name="password" placeholder="Your password"/>
-	</label>
+
 	<input type="submit" name="login" value="Login"/>
 </form>
 
@@ -31,7 +31,7 @@ if(isset($_POST["login"])){
 			));
 			$e = $stmt->errorInfo();
 			if($e[0] != "00000"){
-				echo var_export($e, true);
+				echo "<div>Something maybe went wrong.</div>";
 			}
 			else{
 				$result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -45,7 +45,6 @@ if(isset($_POST["login"])){
 							"first_name" => $result["first_name"],
 							"last_name" => $result["last_name"]
 						);
-						echo var_export($_SESSION,true);
 						header("Location: home.php"); #THIS MAY CAUSE ISSUES. COMMENT OUT IF NECESSARY
 					}
 					else{
@@ -61,5 +60,8 @@ if(isset($_POST["login"])){
 			echo $e->getMessage();
 		}
 	}
+	else{
+	    echo "<div>You need to provide both email and password.</div>";
+    }
 }
 ?>
