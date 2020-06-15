@@ -25,33 +25,35 @@ if(isset($_POST["register"])){
 		$password = $_POST["password"];
 		$cpassword = $_POST["cpassword"];
 		$email = $_POST['email'];
-		if($password == $cpassword){
-			#echo "<div>Passwords Match </div>";
-			#require("config.php");
-			$connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
-			try{
-				$db = new PDO($connection_string, $dbuser, $dbpass);
-				$hash = password_hash($password, PASSWORD_BCRYPT);
-				$stmt = $db->prepare("INSERT INTO Users (email, password) VALUES(:email, :password)");
-				$stmt->execute(array(
-					":email" => $email,
-					":password" => $hash
-				));
-				$e = $stmt->errorInfo();
-				if($e[0] != "00000"){
-					echo var_export($e, true);
-				}
-				else{
-					echo "<div>Succesfully registered</div>";
-				}
-			}
-			catch (Exception $e){
-				echo $e->getMessage();
-			}
-		}
+		if(!(empty($password) || empty($email) || empty($cpassword))) {
+            if ($password == $cpassword) {
+                #echo "<div>Passwords Match </div>";
+                #require("config.php");
+                $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
+                try {
+                    $db = new PDO($connection_string, $dbuser, $dbpass);
+                    $hash = password_hash($password, PASSWORD_BCRYPT);
+                    $stmt = $db->prepare("INSERT INTO Users (email, password) VALUES(:email, :password)");
+                    $stmt->execute(array(
+                        ":email" => $email,
+                        ":password" => $hash
+                    ));
+                    $e = $stmt->errorInfo();
+                    if ($e[0] != "00000") {
+                        echo var_export($e, true);
+                    } else {
+                        echo "<div>Succesfully registered</div>";
+                    }
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                }
+            } else {
+                echo "<div>Passwords do not match</div>";
+            }
+        }
 		else{
-			echo "<div>Passwords do not match</div>";
-		}
+		    echo "<div>You need fill all fields.</div>"
+        }
 	}
 }
 ?>
