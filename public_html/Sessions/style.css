@@ -2,8 +2,8 @@ form {
     width: 50%;
     margin: 10px auto auto;
     text-align: center;
-    border: 2px solid rebeccapurple;
-    border-radius: 2px;
+    border: 1px solid rebeccapurple;
+    padding: 15px 30px;
 }
 
 h1{
