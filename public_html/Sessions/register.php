@@ -46,12 +46,15 @@ if(isset($_POST["register"])){
 				}
 			}
 			catch (Exception $e){
-				echo $e->getMessage();
+				echo "<div>An account has already been created with that email.</div>";
 			}
 		}
 		else{
 			echo "<div>Passwords do not match</div>";
 		}
 	}
+	else{
+	    echo "<div>We are here.</div>";
+    }
 }
 ?>
