@@ -2,6 +2,14 @@
 include("header.php");
 ?>
 <h1>Login</h1>
+<style>
+    div{
+        border-radius: 5px;
+        background-color: pink;
+        padding: 20px;
+    }
+</style>
+<div>
 <form method="post">
 	<label for="email">Email</label>
 	<input type="email" id="email" name="email" placeholder="Your email"/>
@@ -11,7 +19,7 @@ include("header.php");
 
 	<input type="submit" name="login" value="Login"/>
 </form>
-
+</div>
 <?php
 #echo var_export($_GET, true);
 #echo var_export($_POST, true);
