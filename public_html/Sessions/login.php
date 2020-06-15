@@ -1,13 +1,13 @@
 <?php
 include("header.php");
 ?>
-<h4>Login</h4>
+<h1>Login</h1>
 <form method="post">
 	<label for="email">Email
-	<input type="email" id="email" name="email"/>
+	<input type="email" id="email" name="email" placeholder="Your email"/>
 	</label>
 	<label for="p">Password
-	<input type="password" id="p" name="password"/>
+	<input type="password" id="p" name="password" placeholder="Your password"/>
 	</label>
 	<input type="submit" name="login" value="Login"/>
 </form>
