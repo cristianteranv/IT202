@@ -40,7 +40,7 @@ if(isset($_POST["register"])){
                     ));
                     $e = $stmt->errorInfo();
                     if ($e[0] != "00000") {
-                        echo var_export($e, true);
+                        echo "<div>An account has already been created with that email.</div>";
                     } else {
                         echo "<div>Succesfully registered</div>";
                     }
