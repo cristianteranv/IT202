@@ -10,6 +10,7 @@ include("header.php");
         padding: 20px;
         width: 50%;
         align: center;
+        margin: auto;
     }
     label{
         margin: auto;
