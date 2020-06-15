@@ -1,5 +1,4 @@
 <head>
-    <title>Simple Shop</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <?php

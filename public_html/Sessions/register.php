@@ -1,6 +1,7 @@
 <?php
 include("header.php");
 ?>
+<title>Registration</title>
 <h1>Register</h1>
 <form method="post">
 	<label for="email">Email

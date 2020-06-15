@@ -1,6 +1,7 @@
 <?php
 include("header.php");
 ?>
+<title>Login to Simple Shop</title>
 <h1>Login</h1>
 <style>
     div{
