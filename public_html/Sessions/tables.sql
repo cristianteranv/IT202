@@ -1,5 +1,3 @@
-/*Cart table*/
-
 CREATE TABLE Orders(
 	orderID int NOT NULL AUTO_INCREMENT,
 	orderUserID int NOT NULL,
