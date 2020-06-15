@@ -8,6 +8,8 @@ include("header.php");
         border-radius: 5px;
         background-color: pink;
         padding: 20px;
+        width: 50%;
+        align: center;
     }
     label{
         margin: auto;
