@@ -4,9 +4,8 @@ input{
 
 form {
     width: 50%;
-    margin: auto;
+    margin: 10px auto auto;
     text-align: center;
-
 }
 
 h1{
@@ -36,7 +35,7 @@ input[type=password], select {
 /* Style the submit button */
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: rebeccapurple;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -47,5 +46,5 @@ input[type=submit] {
 
 /* Add a background color to the submit button on mouse-over */
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #4a2271;
 }

@@ -3,21 +3,6 @@ include("header.php");
 ?>
 <title>Login to Simple Shop</title>
 <h1>Login</h1>
-<style>
-    div{
-        border-radius: 5px;
-        background-color: pink;
-        padding: 20px;
-        width: 50%;
-        align: center;
-        margin: auto;
-    }
-    label{
-        margin: auto;
-        width: 100%;
-    }
-</style>
-<div>
 <form method="post">
 	<label for="email">Email</label>
 	<input type="email" id="email" name="email" placeholder="Your email"/>
@@ -27,7 +12,6 @@ include("header.php");
     </label>
 	<input type="submit" name="login" value="Login"/>
 </form>
-</div>
 <?php
 #echo var_export($_GET, true);
 #echo var_export($_POST, true);
