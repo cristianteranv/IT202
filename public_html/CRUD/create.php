@@ -21,32 +21,35 @@ if(isset($_POST["created"])){
     $stock = $_POST["stock"];
     $description = $_POST["description"];
     if(!empty($brand) && !empty($product)){
-        $stmt = $db->prepare("INSERT INTO Products(name, brand, category, price, stock, description) 
+        try {
+            $stmt = $db->prepare("INSERT INTO Products(name, brand, category, price, stock, description) 
                                         VALUES(:product, :brand, :category, :price, :stock, :description)");
-        $result = $stmt->execute(array(
-            ":product" => $product,
-            ":brand" => $brand,
-            ":category" => $category,
-            ":price" => $price,
-            ":stock" => $stock,
-            ":description" => $description,
-        ));
-        $e = $stmt->errorInfo();
-        if($e[0] != "00000"){
-            echo var_export($e, true);
+            $result = $stmt->execute(array(
+                ":product" => $product,
+                ":brand" => $brand,
+                ":category" => $category,
+                ":price" => $price,
+                ":stock" => $stock,
+                ":description" => $description
+            ));
+            $e = $stmt->errorInfo();
+            if ($e[0] != "00000") {
+                echo var_export($e, true);
+            } else {
+                echo var_export($result, true);
+                if ($result) {
+                    echo "Succes inserting " . $product . " into the database!";
+                } else {
+                    echo "error while inserting record";
+                }
+            }
         }
-        else{
-            echo var_export($result, true);
-            if($result){
-                echo "Succes inserting " . $product . " into the database!";
-            }
-            else{
-                echo "error while inserting record";
-            }
+        catch (Exception $e){
+            echo $e->getMessage();
         }
     }
     else{
-        echo "You need to fill the brand, product name and description fields.";
+        echo "You need to fill the brand and product name fields.";
     }
 }
 ?>
