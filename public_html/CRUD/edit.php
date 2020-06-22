@@ -9,7 +9,7 @@ if(isset($_GET["thingId"])){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 else{
-    echo "<div>No thingId provided in URL. Need one in order for the form to function properly</div>";
+    echo "<div>No thingId provided in URL. Need one in order for the <for></for>m to function properly</div>";
 }
 ?>
 <form method="POST">
