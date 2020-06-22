@@ -2,13 +2,13 @@
 require("common.inc.php");
 ?>
 <form method="POST">
-    <label for="product">Product name<input type="text" id="product" name="product"/> </label>
-    <label for="brand">Brand <input type="text" id="brand" name="brand"/> </label>
-    <label for="category">Category <input type="text" id="category" name="category"/> </label>
-    <label for="price">Price <input type="number" id="price" name="price"/> </label>
-    <label for="stock">Stock <input type="number" id="stock" name="stock"/> </label>
-    <label for="description">Description <input type="text" id="description" name="description"/> </label>
-    <input type="submit" name="created" value="Create Product"/>
+    <div><label for="product">Product name<input type="text" id="product" name="product" width="100%"/> </label></div>
+    <div><label for="brand">Brand <input type="text" id="brand" name="brand"/> </label></div>
+    <div><label for="category">Category <input type="text" id="category" name="category"/> </label></div>
+    <div><label for="price">Price <input type="number" id="price" name="price"/> </label></div>
+    <div><label for="stock">Stock <input type="number" id="stock" name="stock"/> </label></div>
+    <div><label for="description">Description <input type="text" id="description" name="description"/> </label></div>
+    <div><input type="submit" name="created" value="Create Product"/></div>
 </form>
 <?php
 
@@ -38,7 +38,7 @@ if(isset($_POST["created"])){
         else{
             echo var_export($result, true);
             if($result){
-                echo "Succes inserting " . $product . "into the database!";
+                echo "Succes inserting " . $product . " into the database!";
             }
             else{
                 echo "error while inserting record";
