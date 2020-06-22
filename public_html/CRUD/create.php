@@ -1,5 +1,6 @@
 <?php
 require("common.inc.php");
+$db = getDB();
 ?>
 <form method="POST">
     <div><label for="product">Product name<input type="text" id="product" name="product" width="100%"/> </label></div>
@@ -20,7 +21,6 @@ if(isset($_POST["created"])){
     $stock = $_POST["stock"];
     $description = $_POST["description"];
     if(!empty($brand) && !empty($product)){
-        $db = getDB();
         $stmt = $db->prepare("INSERT INTO Products(name, brand, category, price, stock, description) 
                                         VALUES(:product, :brand, :category, :price, :stock, :description)");
         $result = $stmt->execute(array(
