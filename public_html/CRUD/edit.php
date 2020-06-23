@@ -1,15 +1,15 @@
 <?php
 require("common.inc.php");
 $db = getDB();
-$thingId = -1;
-if(isset($_GET["thingId"])){
-    $thingId = $_GET["thingId"];
+$productId = -1;
+if(isset($_GET["productId"])){
+    $productId = $_GET["productId"];
     $stmt = $db->prepare("SELECT * FROM Products WHERE id = :id");
-    $stmt->execute([":id"=>$thingId]);
+    $stmt->execute([":id"=>$productId]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 else{
-    echo "<div>No thingId provided in URL. Need one in order for the form to function properly</div>";
+    echo "<div>No productId provided in URL. Need one in order for the form to function properly.</div>";
 }
 ?>
 <form method="POST">
@@ -42,7 +42,7 @@ if(isset($_POST["updated"])){
                 ":price" => $price,
                 ":stock" => $stock,
                 ":description" => $description,
-                ":id" => $thingId
+                ":id" => $productId
             ));
             $e = $stmt->errorInfo();
             if ($e[0] != "00000") {

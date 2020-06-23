@@ -1,15 +1,15 @@
 <?php
 require("common.inc.php");
 $db = getDB();
-$thingId = -1;
-if(isset($_GET["thingId"])){
-    $thingId = $_GET["thingId"];
+$productId = -1;
+if(isset($_GET["productId"])){
+    $productId = $_GET["productId"];
     $stmt = $db->prepare("SELECT * FROM Products WHERE id = :id");
-    $stmt->execute([":id"=>$thingId]);
+    $stmt->execute([":id"=>$productId]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 else{
-    echo "<div>No thingId provided in URL. Need one in order for the form to function properly</div>";
+    echo "<div>No productId provided in URL. Need one in order for the form to function properly</div>";
 }
 ?>
 <form method="POST">
@@ -30,12 +30,11 @@ if(isset($_POST["deleted"])){
     $price = $_POST["price"];
     $stock = $_POST["stock"];
     $description = $_POST["description"];
-    if(!empty($brand) && !empty($product)){
+    if($productId > 0){
         try {
-            if($thingId > 0) {
                 $stmt = $db->prepare("DELETE FROM Products WHERE id=:id");
                 $result = $stmt->execute(array(
-                    ":id" => $thingId
+                    ":id" => $productId
                 ));
                 $e = $stmt->errorInfo();
                 if ($e[0] != "00000") {
@@ -48,17 +47,14 @@ if(isset($_POST["deleted"])){
                         echo "Error while deleting record";
                     }
                 }
-            }
-            else{
-                echo "Can't perform deletion because no productId was provided in URL.";
-            }
+
         }
         catch (Exception $e){
             echo $e->getMessage();
         }
     }
     else{
-        echo "You need to fill the brand and product name fields.";
+        echo "Can't perform deletion because no productId was provided in URL.";
     }
 }
 ?>
