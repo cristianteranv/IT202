@@ -13,12 +13,12 @@ else{
 }
 ?>
 <form method="POST">
-    <div><label for="product">Product name<input type="text" id="product" name="product" value="<?php echo get($result, "name"); ?>"/> </label></div>
-    <div><label for="brand">Brand <input type="text" id="brand" name="brand" value="<?php echo get($result, "brand"); ?>"/> </label></div>
-    <div><label for="category">Category <input type="text" id="category" name="category" value="<?php echo get($result, "category"); ?>"/> </label></div>
-    <div><label for="price">Price <input type="number" id="price" name="price" value="<?php echo get($result, "price"); ?>"/> </label></div>
-    <div><label for="stock">Stock <input type="number" id="stock" name="stock" value="<?php echo get($result, "stock"); ?>"/> </label></div>
-    <div><label for="description">Description <input type="text" id="description" name="description" value="<?php echo get($result, "description"); ?>"/> </label></div>
+    <div><label for="product">Product name<input type="text" id="product" readonly name="product" value="<?php echo get($result, "name"); ?>"/> </label></div>
+    <div><label for="brand">Brand <input type="text" id="brand" readonly name="brand" value="<?php echo get($result, "brand"); ?>"/> </label></div>
+    <div><label for="category">Category <input type="text" id="category" readonly name="category" value="<?php echo get($result, "category"); ?>"/> </label></div>
+    <div><label for="price">Price <input type="number" id="price" readonly name="price" value="<?php echo get($result, "price"); ?>"/> </label></div>
+    <div><label for="stock">Stock <input type="number" id="stock" readonly name="stock" value="<?php echo get($result, "stock"); ?>"/> </label></div>
+    <div><label for="description">Description <input type="text" id="description" readonly name="description" value="<?php echo get($result, "description"); ?>"/> </label></div>
     <div><input type="submit" name="deleted" value="Delete Product"/></div>
 </form>
 <?php
