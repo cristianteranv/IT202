@@ -30,7 +30,7 @@ if(isset($_POST["deleted"])){
     $price = $_POST["price"];
     $stock = $_POST["stock"];
     $description = $_POST["description"];
-    if($productId > 0){
+    if($productId > 0 && get($result, "name")){
         try {
                 $stmt = $db->prepare("DELETE FROM Products WHERE id=:id");
                 $result = $stmt->execute(array(
@@ -52,6 +52,9 @@ if(isset($_POST["deleted"])){
         catch (Exception $e){
             echo $e->getMessage();
         }
+    }
+    else if ($productId > 0){
+        echo "Can't perform deletion because there is no product in the database with the id that was provided.";
     }
     else{
         echo "Can't perform deletion because no productId was provided in URL.";
