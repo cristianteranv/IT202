@@ -21,7 +21,7 @@ if(isset($_POST["sort"])){
 if(isset($search)) {
 
     require("common.inc.php");
-    $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%' + :product + '%')";
+    $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
     if (!empty($sort)){
         if($sort = "asc"){
             $query = $query + " ORDER BY name ASC";
