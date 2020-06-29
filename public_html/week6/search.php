@@ -21,7 +21,7 @@ if(isset($_POST["sort"])){
 if(isset($search)) {
 
     require("common.inc.php");
-    $query = "SELECT * FROM Products WHERE name LIKE :product";
+    $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%' + :product + '%')";
     echo "<div>Sort has this value: " . $sort . "</div>";
     try {
         $stmt = getDB()->prepare($query);
