@@ -23,7 +23,7 @@ if(isset($search)) {
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
     if (!empty($sort)){
-        if($sort = "asc"){
+        if($sort == "asc"){
             $query = $query . " ORDER BY name ASC";
         }
         else{
