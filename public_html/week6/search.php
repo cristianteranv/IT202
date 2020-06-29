@@ -4,15 +4,7 @@ if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
 ?>
-<form method="POST">
-    <input type="text" name="search" placeholder="Search for product"
-           value="<?php echo $search;?>"/>
-    <input type="radio" id="asc" name="sort" value="Ascending">
-    <label for="asc">Ascending</label><br>
-    <input type="radio" id="desc" name="sort" value="Descending">
-    <label for="desc">Descending</label><br>
-    <input type="submit" value="Search"/>
-</form>
+
 <?php
 if(isset($search)) {
     require("common.inc.php");
