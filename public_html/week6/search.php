@@ -24,10 +24,10 @@ if(isset($search)) {
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
     if (!empty($sort)){
         if($sort = "asc"){
-            $query = $query + " ORDER BY name ASC";
+            $query = $query . " ORDER BY name ASC";
         }
         else{
-            $query = $query + " ORDER BY name DESC";
+            $query = $query . " ORDER BY name DESC";
         }
     }
     echo "<div>this is the query: " . $query . "</div>";
