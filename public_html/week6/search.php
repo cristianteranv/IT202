@@ -19,7 +19,7 @@ if(isset($_POST["sort"])){
     </form>
 <?php
 if(isset($search)) {
-
+    echo "<div> Sort value: " . $sort . "</div>";
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
     if (!empty($sort)){
