@@ -42,9 +42,12 @@
                             deleteThing(item.id);
                         };
                         deleteButton.innerText = "Delete";
-                        li.appendChild(deleteButton);
-                        ul.appendChild(li);*/
+                        li.appendChild(deleteButton);*/
+                        ul.appendChild(li);
                     });
+                    let thing = document.createElement("div");
+                    thing.innerText = json.results.sort;
+                    thing.appendChild(thing)
                     let content = document.getElementById("content");
                     content.innerHTML = "";
                     content.appendChild(ul);

@@ -12,7 +12,6 @@ if(isset($_POST["sort"])){
 if(isset($search)) {
     require("common.inc.php");
     try {
-        echo "This is the value of sort: " . $sort . "<br>";
         $stmt = getDB()->prepare("SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')");
         //Note: With a LIKE query, we must pass the % during the mapping
         $stmt->execute([":product"=>$search]);
@@ -20,6 +19,7 @@ if(isset($search)) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $results["status"] = 200;
         $results["results"] = $results;
+        $results["sort"] = $sort;
     } catch (Exception $e) {
         $results["status"] = 400;
         $results["error"] = $e->getMessage();
