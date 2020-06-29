@@ -22,7 +22,15 @@ if(isset($search)) {
 
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%' + :product + '%')";
-    echo "<div>Sort has this value: " . $sort . "</div>";
+    if (!empty($sort)){
+        if($sort = "asc"){
+            $query = $query + " ORDER BY name ASC";
+        }
+        else{
+            $query = $query + " ORDER BY name DESC";
+        }
+    }
+    echo "<div>this is the query: " . $query . "</div>";
     try {
         $stmt = getDB()->prepare($query);
         //Note: With a LIKE query, we must pass the % during the mapping
@@ -46,7 +54,7 @@ if(isset($search)) {
             <li>
                 <?php echo get($row, "id")?>
                 <?php echo get($row, "name");?>
-                <a href="delete.php?thingId=<?php echo get($row, "id");?>">Delete</a>
+                <a href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
             </li>
         <?php endforeach;?>
     </ul>
