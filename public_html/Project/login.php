@@ -1,4 +1,5 @@
 <?php
+require ("config.php");
 include("header.php");
 ?>
 <title>Login to Simple Shop</title>

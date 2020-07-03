@@ -1,4 +1,5 @@
 <?php
+require ("config.php");
 include("header.php");
 #session_start();
 session_unset();
