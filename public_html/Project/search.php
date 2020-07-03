@@ -68,7 +68,7 @@ if(isset($search)) {
         echo "<div style='text-align: center; margin: 10px'>Sort value is: None </div>";
     }
     else{
-        echo "<div style='text-align: center; margin: 10px>Sort value is: " . $sort . ".</div>";
+        echo "<div style='text-align: center; margin: 10px'>Sort value is: " . $sort . "</div>";
     }
     ?>
     <ul style="text-align: center">
