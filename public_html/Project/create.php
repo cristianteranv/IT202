@@ -19,6 +19,7 @@ $db = getDB();
         height: 100px;
         width: 165px;
         vertical-align: middle;
+        resize: none;
     }
 </style>
 <form method="POST">
