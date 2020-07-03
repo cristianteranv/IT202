@@ -5,17 +5,18 @@ $db = getDB();
 ?>
 <style>
     label{
-        width="20%";
+        width: 200px;
         display: inline-block;
+        text-align: left;
     }
 </style>
 <form method="POST">
-    <div><label for="product" >Product name<input type="text" id="product" name="product" width=""/> </label></div>
-    <div><label for="brand">Brand <input type="text" id="brand" name="brand"/> </label></div>
-    <div><label for="category">Category <input type="text" id="category" name="category"/> </label></div>
-    <div><label for="price">Price <input type="number" id="price" name="price"/> </label></div>
-    <div><label for="stock">Stock <input type="number" id="stock" name="stock"/> </label></div>
-    <div><label for="description">Description <input type="text" id="description" name="description"/> </label></div>
+    <div><label for="product" >Product name</label><input type="text" id="product" name="product" width=""/></div>
+    <div><label for="brand">Brand</label><input type="text" id="brand" name="brand"/></div>
+    <div><label for="category">Category</label><input type="text" id="category" name="category"/></div>
+    <div><label for="price">Price</label><input type="number" id="price" name="price"/></div>
+    <div><label for="stock">Stock</label><input type="number" id="stock" name="stock"/></div>
+    <div><label for="description">Description</label><input type="text" id="description" name="description"/></div>
     <div><input type="submit" name="created" value="Create Product"/></div>
 </form>
 <?php
