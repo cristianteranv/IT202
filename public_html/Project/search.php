@@ -18,6 +18,19 @@ if(isset($_POST["sort"])){
     <label for="desc">Descending</label>
     <input type="submit" value="Search"/>
 </form>
+<style>
+    li{
+        display: table-row;
+        height: 30px;
+        margin: 10px;
+        vertical-align: middle;
+    }
+    li a {
+        display:table-cell;
+        vertical-align: middle;
+        height:10px;
+    }
+</style>
 <?php
 if(isset($search)) {
     require("common.inc.php");
@@ -59,9 +72,9 @@ if(isset($search)) {
         <?php foreach($results as $row):?>
             <li>
                 <a style="width: 50px"><?php echo get($row, "id")?></a>
-                <a style="width: 50px"><?php echo get($row, "name")?></a>
-                <a style="width: 20px" href="edit.php?productId=<?php echo get($row, "id");?>">Edit</a>
-                <a style="width: 20px" href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
+                <a style="width: 100px"><?php echo get($row, "name")?></a>
+                <a style="width: 50px" href="edit.php?productId=<?php echo get($row, "id");?>">Edit</a>
+                <a style="width: 50px" href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
             </li>
         <?php endforeach;?>
     </ul>
