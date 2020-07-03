@@ -11,6 +11,10 @@ h1{
     margin: auto;
 }
 /* Style inputs */
+input[type=text]{
+    text-align: justify;
+}
+
 input[type=email], select {
     width: 100%;
     padding: 12px 20px;
