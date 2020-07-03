@@ -65,15 +65,16 @@ if(isset($search)) {
     <!-- note how we must close each check we're doing as well-->
 <?php if(isset($results) && count($results) > 0):
     if (empty($sort)){
-        echo "<div>Sort value is: None </div>";
+        echo "<div style='text-align: center; margin: 10px'>Sort value is: None </div>";
     }
     else{
-        echo "<div>Sort value is: " . $sort . ".</div>";
+        echo "<div style='text-align: center; margin: 10px>Sort value is: " . $sort . ".</div>";
     }
     ?>
     <ul style="text-align: center">
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
+        <li><a>ID</a><a>Name</a><a> </a><a> </a></li>
         <?php foreach($results as $row):?>
             <li>
                 <a style="width: 50px"><?php echo get($row, "id")?></a>
