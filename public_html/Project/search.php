@@ -1,4 +1,5 @@
 <?php
+include("header.php");
 $search = "";
 $sort = "";
 if(isset($_POST["search"])){
