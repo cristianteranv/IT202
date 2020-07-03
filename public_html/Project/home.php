@@ -6,7 +6,7 @@ require("config.php");
 session_start();
 ?>
 <title>Simple Shop</title>
-<h1 align="center">Home</h1>
+<header>
 <nav>
     <ul>
         <?php
@@ -25,3 +25,5 @@ session_start();
 
     </ul>
 </nav>
+</header>
+<h1>Home</h1>

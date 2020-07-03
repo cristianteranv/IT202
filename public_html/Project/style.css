@@ -55,7 +55,7 @@ header {
 
 nav {
     height: 64px;
-    background: black;
+    background: rebeccapurple;
     color: white;
 }
 
@@ -75,7 +75,7 @@ nav li {
 }
 
 nav li:hover {
-    background: gray;
+    background: #4a2271;
 }
 
 nav li a {
