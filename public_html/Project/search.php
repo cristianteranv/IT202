@@ -49,7 +49,6 @@ if(isset($search)) {
     note the structure and the ":" -->
     <!-- note how we must close each check we're doing as well-->
 <?php if(isset($results) && count($results) > 0):?>
-    <p>Here are your search results.</p>
     <ul>
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
@@ -57,6 +56,7 @@ if(isset($search)) {
             <li>
                 <?php echo get($row, "id")?>
                 <?php echo get($row, "name");?>
+                <a href="edit.php?productId=<?php echo get($row, "id");?>">Edit</a>
                 <a href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
             </li>
         <?php endforeach;?>
