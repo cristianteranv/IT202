@@ -5,9 +5,12 @@ $db = getDB();
 ?>
 <style>
     label{
-        width: 200px;
+        width: 100px;
         display: inline-block;
         text-align: left;
+    }
+    div{
+        padding: 2px;
     }
 </style>
 <form method="POST">
