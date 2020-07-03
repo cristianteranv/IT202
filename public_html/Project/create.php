@@ -26,7 +26,7 @@ $db = getDB();
     <div><label for="category">Category</label><input type="text" id="category" name="category"/></div>
     <div><label for="price">Price</label><input type="number" id="price" name="price"/></div>
     <div><label for="stock">Stock</label><input type="number" id="stock" name="stock"/></div>
-    <div><label for="description">Description</label><textarea id="description" name="description"/></div>
+    <div><label for="description">Description</label><textarea id="description" name="description"></textarea></div>
     <div><input type="submit" name="created" value="Create Product"/></div>
 </form>
 <?php
