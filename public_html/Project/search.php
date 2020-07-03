@@ -20,7 +20,6 @@ if(isset($_POST["sort"])){
 </form>
 <?php
 if(isset($search)) {
-    echo "<div> Sort value: " . $sort . "</div>";
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
     if (!empty($sort)){
@@ -46,8 +45,15 @@ if(isset($search)) {
     <!--This part will introduce us to PHP templating,
     note the structure and the ":" -->
     <!-- note how we must close each check we're doing as well-->
-<?php if(isset($results) && count($results) > 0):?>
-    <ul>
+<?php if(isset($results) && count($results) > 0):
+    if (empty($sort)){
+        echo "<div>Sort value is: None </div>";
+    }
+    else{
+        echo "<div>Sort value is: " . $sort . ".</div>";
+    }
+    ?>
+    <ul style="text-align: center">
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
         <?php foreach($results as $row):?>
