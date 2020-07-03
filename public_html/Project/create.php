@@ -12,6 +12,13 @@ $db = getDB();
     div{
         padding: 2px;
     }
+    input{
+        size: 100px 100px;
+    }
+    textarea{
+        height: 100px;
+        vertical-align: middle;
+    }
 </style>
 <form method="POST">
     <div><label for="product" >Product name</label><input type="text" id="product" name="product" width=""/></div>
@@ -19,7 +26,7 @@ $db = getDB();
     <div><label for="category">Category</label><input type="text" id="category" name="category"/></div>
     <div><label for="price">Price</label><input type="number" id="price" name="price"/></div>
     <div><label for="stock">Stock</label><input type="number" id="stock" name="stock"/></div>
-    <div><label for="description">Description</label><input type="text" id="description" name="description"/></div>
+    <div><label for="description">Description</label><textarea id="description" name="description"/></div>
     <div><input type="submit" name="created" value="Create Product"/></div>
 </form>
 <?php
