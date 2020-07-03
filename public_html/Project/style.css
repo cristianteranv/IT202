@@ -60,7 +60,6 @@ li a {
 /*Header menu*/
 header {
     width: 100%;
-    position: fixed;
     left: 0;
     top: 0;
 }
