@@ -30,6 +30,11 @@ if(isset($_POST["sort"])){
         vertical-align: middle;
         height:10px;
     }
+    ul{
+        display: table;
+        text-align: center;
+        margin: 10px auto;
+    }
 </style>
 <?php
 if(isset($search)) {
