@@ -1,7 +1,7 @@
 form {
     width: 50%;
     margin: 10px auto auto;
-    text-align: justify;
+    text-align: center;
     border: 1px solid rebeccapurple;
     padding: 15px 30px;
 }
@@ -11,10 +11,6 @@ h1{
     margin: auto;
 }
 /* Style inputs */
-input[type=text]{
-    text-align: justify;
-}
-
 input[type=email], select {
     width: 100%;
     padding: 12px 20px;
