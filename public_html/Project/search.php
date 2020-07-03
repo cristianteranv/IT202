@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+?>
+<?php
 $search = "";
 $sort = "";
 if(isset($_POST["search"])){
@@ -9,15 +11,15 @@ if(isset($_POST["sort"])){
     $sort = $_POST["sort"];
 }
 ?>
-    <form method="POST">
-        <input type="text" name="search" placeholder="Search for product"
-               value="<?php echo $search;?>"/>
-        <input type="radio" name="sort" id="asc" value="asc"/>
-        <label for="asc">Ascending</label>
-        <input type="radio" name="sort" id="desc" value="desc"/>
-        <label for="desc">Descending</label>
-        <input type="submit" value="Search"/>
-    </form>
+<form method="POST">
+    <input type="text" name="search" placeholder="Search for product"
+           value="<?php echo $search;?>"/>
+    <input type="radio" name="sort" id="asc" value="asc"/>
+    <label for="asc">Ascending</label>
+    <input type="radio" name="sort" id="desc" value="desc"/>
+    <label for="desc">Descending</label>
+    <input type="submit" value="Search"/>
+</form>
 <?php
 if(isset($search)) {
     echo "<div> Sort value: " . $sort . "</div>";

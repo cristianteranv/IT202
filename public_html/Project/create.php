@@ -1,5 +1,6 @@
 <?php
 require("common.inc.php");
+include("header.php");
 $db = getDB();
 ?>
 <form method="POST">
