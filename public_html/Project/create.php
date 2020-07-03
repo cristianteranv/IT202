@@ -1,6 +1,6 @@
 <?php
-require("common.inc.php");
 include("header.php");
+require("common.inc.php");
 $db = getDB();
 ?>
 <form method="POST">
