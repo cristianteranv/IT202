@@ -58,10 +58,10 @@ if(isset($search)) {
         we're also using our helper function to safely return a value based on our key/column name.-->
         <?php foreach($results as $row):?>
             <li>
-                <?php echo get($row, "id")?>
-                <?php echo get($row, "name");?>
-                <a href="edit.php?productId=<?php echo get($row, "id");?>">Edit</a>
-                <a href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
+                <a style="width: 50px"><?php echo get($row, "id")?></a>
+                <a style="width: 50px"><?php echo get($row, "name")?></a>
+                <a style="width: 20px" href="edit.php?productId=<?php echo get($row, "id");?>">Edit</a>
+                <a style="width: 20px" href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
             </li>
         <?php endforeach;?>
     </ul>
