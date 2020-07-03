@@ -26,8 +26,8 @@ $db = getDB();
     <div><label for="product" >Product name</label><input type="text" id="product" name="product" width=""/></div>
     <div><label for="brand">Brand</label><input type="text" id="brand" name="brand"/></div>
     <div><label for="category">Category</label><input type="text" id="category" name="category"/></div>
-    <div><label for="price">Price</label><input type="number" id="price" name="price"/></div>
-    <div><label for="stock">Stock</label><input type="number" id="stock" name="stock" min="0" value="0" step=".01"/></div>
+    <div><label for="price">Price</label><input type="number" id="price" name="price" min="0" step=".01"/></div>
+    <div><label for="stock">Stock</label><input type="number" id="stock" name="stock"/></div>
     <div><label for="description">Description</label><textarea id="description" name="description"></textarea></div>
     <div><input type="submit" name="created" value="Create Product"/></div>
 </form>
