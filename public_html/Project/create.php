@@ -13,10 +13,11 @@ $db = getDB();
         padding: 2px;
     }
     input{
-        size: 100px 100px;
+        width: 165px;
     }
     textarea{
         height: 100px;
+        width: 165px;
         vertical-align: middle;
     }
 </style>
