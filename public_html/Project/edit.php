@@ -1,4 +1,5 @@
 <?php
+include ("header.php");
 require("common.inc.php");
 $db = getDB();
 $productId = -1;

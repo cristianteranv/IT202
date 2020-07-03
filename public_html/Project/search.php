@@ -31,7 +31,7 @@ if(isset($search)) {
             $query = $query . " ORDER BY name DESC";
         }
     }
-    echo "<div>this is the query: " . $query . "</div>";
+    #echo "<div>this is the query: " . $query . "</div>";       UNCOMMENT TO SHOW QUERY ON PAGE
     try {
         $stmt = getDB()->prepare($query);
         //Note: With a LIKE query, we must pass the % during the mapping
