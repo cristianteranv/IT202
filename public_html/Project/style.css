@@ -45,3 +45,51 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #4a2271;
 }
+
+header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+nav {
+    height: 64px;
+    background: black;
+    color: white;
+}
+
+div#menu {
+    float: left;
+}
+
+nav ul {
+    padding-left: 0px;
+    margin: 0;
+}
+
+nav li {
+    height: 100%;
+    display: inline-block; /* to make list horizontal */
+    margin: 0 1.25em;
+}
+
+nav li:hover {
+    background: gray;
+}
+
+nav li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+#menu, #menu ul {
+    height: 100%;
+}
+
+#menu ul li{
+    display: inline-flex;
+    align-items: center
+}
