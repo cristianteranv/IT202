@@ -1,7 +1,4 @@
 <?php
-include("header.php");
-?>
-<?php
 $search = "";
 $sort = "";
 if(isset($_POST["search"])){
