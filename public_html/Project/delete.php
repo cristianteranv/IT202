@@ -13,6 +13,25 @@ else{
     echo "<div>No productId provided in URL. Need one in order for the form to function properly</div>";
 }
 ?>
+<style>
+    label{
+        width: 100px;
+        display: inline-block;
+        text-align: left;
+    }
+    div{
+        padding: 2px;
+    }
+    input{
+        width: 165px;
+    }
+    textarea{
+        height: 100px;
+        width: 165px;
+        vertical-align: middle;
+        resize: none;
+    }
+</style>
 <form method="POST">
     <div><label for="product">Product name<input type="text" id="product" readonly name="product" value="<?php echo get($result, "name"); ?>"/> </label></div>
     <div><label for="brand">Brand</label><input type="text" id="brand" readonly name="brand" value="<?php echo get($result, "brand"); ?>"/></div>
