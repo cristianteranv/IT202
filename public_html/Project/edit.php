@@ -38,7 +38,7 @@ else{
     <div><label for="category">Category</label><input type="text" id="category" name="category" value="<?php echo get($result, "category"); ?>"/></div>
     <div><label for="price">Price</label><input type="number" id="price" name="price" value="<?php echo get($result, "price"); ?>"/></div>
     <div><label for="stock">Stock</label><input type="number" id="stock" name="stock" value="<?php echo get($result, "stock"); ?>"/></div>
-    <div><label for="description">Description</label><textarea id="description" name="description" value="<?php echo get($result, "description"); ?>"></textarea></div>
+    <div><label for="description">Description</label><textarea id="description" name="description"><?php echo get($result, "description"); ?></textarea></div>
     <div><input type="submit" name="updated" value="Update Product"/></div>
 </form>
 <?php
