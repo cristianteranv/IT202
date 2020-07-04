@@ -33,7 +33,7 @@ else{
     }
 </style>
 <form method="POST">
-    <div><label for="product">Product name<input type="text" id="product" readonly name="product" value="<?php echo get($result, "name"); ?>"/> </label></div>
+    <div><label for="product">Product name</label><input type="text" id="product" readonly name="product" value="<?php echo get($result, "name"); ?>"/></div>
     <div><label for="brand">Brand</label><input type="text" id="brand" readonly name="brand" value="<?php echo get($result, "brand"); ?>"/></div>
     <div><label for="category">Category</label><input type="text" id="category" readonly name="category" value="<?php echo get($result, "category"); ?>"/></div>
     <div><label for="price">Price  </label><input type="number" id="price" readonly name="price" value="<?php echo get($result, "price"); ?>"/></div>
