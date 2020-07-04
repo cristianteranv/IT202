@@ -4,9 +4,9 @@ include("header.php");
 ?>
 <title>Login to Simple Shop</title>
 <h1>Login</h1>
-<form method="post">
+<form method="post" autocomplete="off">
 	<label for="email">Email</label>
-	<input type="email" id="email" name="email" placeholder="Your email"/>
+	<input type="email" id="email" name="email" placeholder="Your email" autocomplete="false"/>
 
 	<label for="p">Password
 	<input type="password" id="p" name="password" placeholder="Your password"/>
