@@ -4,13 +4,11 @@ include("header.php");
 ?>
 <title>Login to Simple Shop</title>
 <h1>Login</h1>
-<form method="post" autocomplete="off">
+<form method="post">
 	<label for="email">Email</label>
-	<input type="email" id="email" name="email" placeholder="Your email" autocomplete="false"/>
-
-	<label for="p">Password
-	<input type="password" id="p" name="password" placeholder="Your password"/>
-    </label>
+	<input type="email" id="email" name="email" placeholder="Your email"/>
+	<label for="p">Password</label>
+    <input type="password" id="p" name="password" placeholder="Your password"/>
 	<input type="submit" name="login" value="Login"/>
 </form>
 <?php
