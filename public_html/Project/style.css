@@ -98,6 +98,10 @@ nav li a {
     text-align: center;
 }
 
+textarea{
+    font-family: Arial;
+}
+
 #menu, #menu ul {
     height: 100%;
 }
