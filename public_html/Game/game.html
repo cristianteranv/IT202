@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Get the squares</title>
     <script>
         // Collect The Square game
+
+        // Get a reference to the canvas DOM element
+        var canvas = document.getElementById('canvas');
 
         // Get the canvas drawing context
         var context = canvas.getContext('2d');
@@ -28,6 +30,14 @@
         var targetX = 0;
         var targetY = 0;
         var targetLength = 25;
+
+        function init() {
+            canvas = document.getElementById("board");
+            if (canvas.getContext){
+                context = canvas.getContext("2d");
+
+            }
+        }
 
         // Determine if number a is within the range b to c (exclusive)
         function isWithin(a, b, c) {
@@ -77,9 +87,6 @@
 
         // Show the start menu
         function menu() {
-            // Get a reference to the canvas DOM element
-            var canvas = document.getElementById('canvas');
-
             erase();
             context.fillStyle = '#000000';
             context.font = '36px Arial';
@@ -90,6 +97,7 @@
             context.font = '18px Arial'
             context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
             // Start the game on a click
+            canvas.focus();
             canvas.addEventListener('click', startGame);
         }
 
