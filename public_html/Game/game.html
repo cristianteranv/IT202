@@ -48,7 +48,7 @@
         var id = null;
 
         // used for random color
-        var randomColor;
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
         // Listen for keydown events
         canvas.addEventListener('keydown', function(event) {
@@ -170,13 +170,13 @@
             if (isWithin(targetX, x, x + sideLength) || isWithin(targetX + targetLength, x, x + sideLength)) { // X
                 if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
                     // Respawn the target
+                    randomColor = Math.floor(Math.random()*16777215).toString(16);
                     moveTarget();
                     // Increase the score
                     score++;
                 }
             }
             // Draw the square
-            randomColor = Math.floor(Math.random()*16777215).toString(16);
             context.fillStyle = '#' + randomColor;
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
