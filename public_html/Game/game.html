@@ -47,6 +47,9 @@
         // ID to track the setTimeout
         var id = null;
 
+        // used for random color
+        var randomColor;
+
         // Listen for keydown events
         canvas.addEventListener('keydown', function(event) {
 
@@ -173,7 +176,8 @@
                 }
             }
             // Draw the square
-            context.fillStyle = '#FF0000';
+            randomColor = Math.floor(Math.random()*16777215).toString(16);
+            context.fillStyle = '#' + randomColor;
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
             context.fillStyle = '#00FF00';
