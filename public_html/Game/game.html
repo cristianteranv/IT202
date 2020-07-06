@@ -14,6 +14,7 @@
             // Get the canvas drawing context
             var context = canvas.getContext("2d");
             menu();
+            canvas.focus();
         }
 
         // Your score
@@ -194,15 +195,12 @@
             }
         }
 
-        // Start the game
-        menu();
-        canvas.focus();
     </script>
 </head>
 <body onload="init();">
     <a href="http://bencentra.com/2017-07-11-basic-html5-canvas-games.html">Collection of canvas based games by Ben Centra</a>
     <main>
-        <canvas id="board" width="600px" height="600px" style="border: 1px solid rebeccapurple">
+        <canvas id="board" width="600px" height="600px" style="border: 1px solid rebeccapurple;">
         </canvas>
     </main>
 </body>
