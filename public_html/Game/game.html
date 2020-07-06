@@ -7,10 +7,10 @@
 
         // Get a reference to the canvas DOM element
         function init() {
-            var canvas = document.getElementById('canvas');
+            var canvas = document.getElementById("canvas");
 
             // Get the canvas drawing context
-            var context = canvas.getContext('2d');
+            var context = canvas.getContext("2d");
         }
 
         // Your score
@@ -32,14 +32,6 @@
         var targetX = 0;
         var targetY = 0;
         var targetLength = 25;
-
-        function init() {
-            var canvas = document.getElementById("board");
-            if (canvas.getContext){
-                var context = canvas.getContext("2d");
-
-            }
-        }
 
         // Determine if number a is within the range b to c (exclusive)
         function isWithin(a, b, c) {
