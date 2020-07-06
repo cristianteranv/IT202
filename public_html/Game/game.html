@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <title>Get the squares</title>
+
+</head>
+<body>
+    <div id="center">
+        <canvas id="canvas" width="550px" height="550px"></canvas>
+    </div>
+    <span id="endgame"></span>
     <script>
         // Collect The Square game
 
         // Get a reference to the canvas DOM element
-        var canvas = document.getElementById("board");
-        var context = canvas.getContext("2d");
-        function init() {
-            var canvas = document.getElementById("board");
-
-            // Get the canvas drawing context
-            var context = canvas.getContext("2d");
-            menu();
-            canvas.focus();
-        }
+        var canvas = document.getElementById('canvas');
+        // Get the canvas drawing context
+        var context = canvas.getContext('2d');
 
         // Your score
         var score = 0;
@@ -95,7 +95,6 @@
             context.font = '18px Arial'
             context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
             // Start the game on a click
-            canvas.focus();
             canvas.addEventListener('click', startGame);
         }
 
@@ -176,7 +175,7 @@
                 }
             }
             // Draw the square
-            context.fillStyle = '#ff0000';
+            context.fillStyle = '#FF0000';
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
             context.fillStyle = '#00FF00';
@@ -195,13 +194,9 @@
             }
         }
 
+        // Start the game
+        menu();
+        canvas.focus();
     </script>
-</head>
-<body onload="init();">
-    <a href="http://bencentra.com/2017-07-11-basic-html5-canvas-games.html">Collection of canvas based games by Ben Centra</a>
-    <main>
-        <canvas id="board" width="600px" height="600px" style="border: 1px solid rebeccapurple;">
-        </canvas>
-    </main>
 </body>
 </html>
