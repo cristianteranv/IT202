@@ -6,8 +6,6 @@
     <script>
         // Collect The Square game
 
-        // Get a reference to the canvas DOM element
-        var canvas = document.getElementById('canvas');
         // Get the canvas drawing context
         var context = canvas.getContext('2d');
 
@@ -79,6 +77,9 @@
 
         // Show the start menu
         function menu() {
+            // Get a reference to the canvas DOM element
+            var canvas = document.getElementById('canvas');
+
             erase();
             context.fillStyle = '#000000';
             context.font = '36px Arial';
@@ -169,7 +170,7 @@
                 }
             }
             // Draw the square
-            context.fillStyle = '#FF0000';
+            context.fillStyle = '#ff0000';
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
             context.fillStyle = '#00FF00';
@@ -196,7 +197,7 @@
 <body onload="menu();">
     <a href="http://bencentra.com/2017-07-11-basic-html5-canvas-games.html">Collection of canvas based games by Ben Centra</a>
     <main>
-        <canvas id="canvas" width="600px" height="600px" style="border: 1px solid rebeccapurple">
+        <canvas id="board" width="600px" height="600px" style="border: 1px solid rebeccapurple">
         </canvas>
     </main>
 </body>
