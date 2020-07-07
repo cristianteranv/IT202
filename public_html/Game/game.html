@@ -144,6 +144,7 @@
             for(let i=0; i<targetsNumber; i++) {
                 while (collidedWTargets(targets) || collidedWPlayer(targetX, targetY)) {
                     moveTarget();
+                    console.log("here");
                 }
                 targets.append([targetX, targetY]);
                 context.fillStyle = '#' + randomColor;
@@ -227,8 +228,10 @@
             context.fillStyle = '#' + randomColor;
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
+            console.log("here2");
             drawTargets(targets, targetsNumber);
             // Draw the score and time remaining
+            console.log("here3");
             context.fillStyle = '#000000';
             context.font = '24px Arial';
             context.textAlign = 'left';
