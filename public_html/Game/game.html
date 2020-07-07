@@ -150,6 +150,8 @@
                 context.fillRect(targetX, targetY, targetLength, targetLength);
                 randomColor = Math.floor(Math.random()*16777215).toString(16);
             }
+            targetX = targets[0][0];
+            targetY = targets[0][1];
         }
 
         function collidedWTargets(targets, targetsNumber){
