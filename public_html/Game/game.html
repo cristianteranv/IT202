@@ -36,6 +36,10 @@
         var targetX = 0;
         var targetY = 0;
         var targetLength = 25;
+        var tempX;
+        var tempY;
+        var targets = [];
+        var targetsNumber = 3;
 
         // Determine if number a is within the range b to c (exclusive)
         function isWithin(a, b, c) {
@@ -131,11 +135,52 @@
             targetY = Math.round(Math.random() * canvas.height - targetLength)
         }
 
+        function resetTargets() {
+            targets = [];
+        }
+
+        function drawTargets(targets, targetsNumber) {
+            resetTargets();
+            for(let i=0; i<targetsNumber; i++) {
+                while (collidedWTargets(targets) || collidedWPlayer(targetX, targetY)) {
+                    moveTarget();
+                }
+                targets.append([targetX, targetY]);
+                context.fillStyle = '#' + randomColor;
+                context.fillRect(targetX, targetY, targetLength, targetLength);
+                randomColor = Math.floor(Math.random()*16777215).toString(16);
+            }
+        }
+
+        function collidedWTargets(targets, targetsNumber){
+            for(let i = 0; i < targets.length; i++){
+                tempX = targets[i][0];
+                tempY = targets[i][1];
+                if(isWithin(targetX, tempX, tempX+targetLength) || isWithin(targetX + targetLength, tempX, tempX+targetLength) ){
+                    if(isWithin(targetY, tempY, tempY+targetLength) || isWithin(targetY+targetLength, tempY, tempY+targetLength)){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function collidedWPlayer(passedX, passedY) {
+            if (isWithin(passedX, x, x + sideLength) || isWithin(passedX + targetLength, x, x + sideLength)) { // X
+                if (isWithin(passedY, y, y + sideLength) || isWithin(passedY + targetLength, y, y + sideLength)) { // Y
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Clear the canvas
         function erase() {
             context.fillStyle = '#FFFFFF';
             context.fillRect(0, 0, canvas.width, canvas.height);
         }
+
+
 
         // The main draw loop
         function draw() {
@@ -180,8 +225,7 @@
             context.fillStyle = '#' + randomColor;
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
-            context.fillStyle = '#00FF00';
-            context.fillRect(targetX, targetY, targetLength, targetLength);
+            drawTargets(targets, targetsNumber);
             // Draw the score and time remaining
             context.fillStyle = '#000000';
             context.font = '24px Arial';
