@@ -69,6 +69,8 @@
         // Get the canvas drawing context
         var context = canvas.getContext('2d');
 
+        var bool = false;
+
         // Your score
         var score = 0;
 
@@ -102,7 +104,7 @@
         // Countdown timer (in seconds)
         var countdown = 30;
         // ID to track the setTimeout
-        var id = null;
+        var asd;
 
         // used for random color
         var randomColor = Colors.random();
@@ -159,7 +161,7 @@
         // Start the game
         function startGame() {
             // Reduce the countdown timer ever second
-            id = setInterval(function() {
+            asd = setInterval(function() {
                 countdown--;
             }, 1000)
             // Stop listening for click events
@@ -173,7 +175,7 @@
         // Show the game over screen
         function endGame() {
             // Stop the countdown
-            clearInterval(id);
+            clearInterval(asd);
             // Display the final score
             erase();
             context.fillStyle = '#000000';
@@ -291,6 +293,13 @@
                     score++;
                 }
             }
+
+            for (let j = 1; j<targets.length; j++){
+                if (collidedWPlayer(targets[j][0], targets[j][1])){
+                    bool = true;
+                }
+            }
+
             // Draw the square
             context.fillStyle = randomColor;
             context.fillRect(x, y, sideLength, sideLength);
@@ -303,7 +312,7 @@
             context.fillText('Score: ' + score, 10, 24);
             context.fillText('Time Remaining: ' + countdown, 10, 50);
             // End the game or keep playing
-            if (countdown <= 0) {
+            if (countdown <= 0 || bool) {
                 endGame();
             } else {
                 window.requestAnimationFrame(draw);
