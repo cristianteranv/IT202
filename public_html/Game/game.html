@@ -16,15 +16,15 @@
         Colors = {};
         Colors.names = {
             aqua: "#00ffff",
-            azure: "#f0ffff",
-            beige: "#f5f5dc",
+
+
             black: "#000000",
             blue: "#0000ff",
             brown: "#a52a2a",
-            cyan: "#00ffff",
+
             darkblue: "#00008b",
             darkcyan: "#008b8b",
-            darkgrey: "#a9a9a9",
+
             darkgreen: "#006400",
             darkkhaki: "#bdb76b",
             darkmagenta: "#8b008b",
@@ -40,11 +40,8 @@
             indigo: "#4b0082",
             khaki: "#f0e68c",
             lightblue: "#add8e6",
-            lightcyan: "#e0ffff",
             lightgreen: "#90ee90",
-            lightgrey: "#d3d3d3",
             lightpink: "#ffb6c1",
-            lightyellow: "#ffffe0",
             lime: "#00ff00",
             magenta: "#ff00ff",
             maroon: "#800000",
@@ -55,8 +52,6 @@
             purple: "#800080",
             violet: "#800080",
             red: "#ff0000",
-            silver: "#c0c0c0",
-            white: "#ffffff",
             yellow: "#ffff00"
         };
 
@@ -96,11 +91,12 @@
         var tempX;
         var tempY;
         var targets = [];
-        var targetsNumber = 3;
+        var targetsNumber = 4;
+        var targetsColors = [];
 
         // Determine if number a is within the range b to c (exclusive)
         function isWithin(a, b, c) {
-            return (a > b && a < c);
+            return (a >= b && a <= c);
         }
 
         // Countdown timer (in seconds)
@@ -109,7 +105,7 @@
         var id = null;
 
         // used for random color
-        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        var randomColor = Colors.random();
 
         // Listen for keydown events
         canvas.addEventListener('keydown', function(event) {
@@ -169,7 +165,7 @@
             // Stop listening for click events
             canvas.removeEventListener('click', startGame);
             // Put the target at a random starting point
-            moveTarget();
+            generateTargets();
             // Kick off the draw loop
             draw();
         }
@@ -192,26 +188,38 @@
             targetY = Math.round(Math.random() * canvas.height - targetLength)
         }
 
-        function resetTargets() {
-            targets = [];
-        }
-
-        function drawTargets() {
+        function generateTargets() {
             resetTargets();
-            for(let i=0; i<targetsNumber; i++) {
-                while (collidedWTargets(targets) || collidedWPlayer(targetX, targetY)) {
-                    //console.log("here");
+            var tempColor;
+            targetsColors[0] = randomColor;
+            for(let i = 0; i<targetsNumber; i++){
+                while(collidedWTargets() || collidedWPlayer(targetX, targetY)){
                     moveTarget();
-                    //console.log("here2");
                 }
-                targets.push([targetX, targetY]);
-                context.fillStyle = '#' + randomColor;
-                context.fillRect(targetX, targetY, targetLength, targetLength);
-                //randomColor = Colors.random();
+                targets[i] = [targetX, targetY];
+                tempColor = Colors.random();
+                if (i>0) {
+                    while (tempColor == randomColor) {
+                        tempColor = Colors.random();
+                    }
+                    targetsColors.push(tempColor);
+                }
             }
             targetX = targets[0][0];
             targetY = targets[0][1];
-            console.log(targetX, targetY);
+            console.log(targets);
+        }
+
+        function resetTargets() {
+            targets = [];
+            targetsColors = [];
+        }
+
+        function drawTargets() {
+            for(let i=0; i<targetsNumber; i++) {
+                context.fillStyle = targetsColors[i];
+                context.fillRect(targets[i][0], targets[i][1], targetLength, targetLength);
+            }
         }
 
         function collidedWTargets(){
@@ -278,16 +286,16 @@
                 if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
                     // Respawn the target
                     randomColor = Colors.random();
-                    drawTargets();
+                    generateTargets();
                     // Increase the score
                     score++;
                 }
             }
             // Draw the square
-            context.fillStyle = '#' + randomColor;
+            context.fillStyle = randomColor;
             context.fillRect(x, y, sideLength, sideLength);
             // Draw the target
-            drawTargets(targets, targetsNumber);
+            drawTargets();
             // Draw the score and time remaining
             context.fillStyle = '#000000';
             context.font = '24px Arial';
