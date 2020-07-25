@@ -30,7 +30,7 @@ if (isset($_SESSION["user"])){
     <input type="text" name="search" placeholder="Search for product"
            value="<?php echo $search;?>"/>
     <a>By: </a>
-    <input type="radio" name="filter" id="name" value="name"/>
+    <input type="radio" name="filter" id="name" value="name" checked="checked"/>
     <label for="name">Name</label>
     <input type="radio" name="filter" id="category" value="category"/>
     <label for="category">Category</label>
