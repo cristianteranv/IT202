@@ -23,6 +23,7 @@ if (isset($_SESSION["user"])){
 ?>
 
 <form method="POST">
+    <label for="search">Filter:</label>
     <input type="text" name="search" placeholder="Search for product"
            value="<?php echo $search;?>"/>
     <input type="radio" name="sort" id="asc" value="asc"/>
@@ -85,14 +86,16 @@ note the structure and the ":" -->
         we're also using our helper function to safely return a value based on our key/column name.-->
         <li>
             <a href="?order=name&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Name</a>
-            <a href="?order=price&&sort=<?php echo $sort?>">Cost</a>
-            <a href="?order=popularity&&sort=<?php echo $sort?>">Popularity</a>
-            <a href="?order=date&&sort=<?php echo $sort?>">Date added</a>
+            <a href="?order=price&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Cost</a>
+            <a href="?order=category&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Category</a>
+            <a href="?order=popularity&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Popularity</a>
+            <a href="?order=date&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Date added</a>
         </li>
         <?php foreach($results as $row):?>
             <li>
                 <a style="width: 50px"><?php echo get($row, "name")?></a>
                 <a style="width: 100px"><?php echo get($row, "price")?></a>
+                <a style="width: 100px"><?php echo get($row, "category")?></a>
                 <a style="width: 100px">Popularity</a>
                 <a style="width: 100px">Date</a>
                 <a style="width: 100px">Add to cart</a>
