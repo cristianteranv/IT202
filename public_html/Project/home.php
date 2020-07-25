@@ -5,8 +5,17 @@ $sort = "";
 if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
+if(isset($_POST["order"])){
+    $order = $_POST["order"];
+}
+else{
+    $order = "name";
+}
 if(isset($_POST["sort"])){
     $sort = $_POST["sort"];
+}
+else{
+    $sort = "DESC";
 }
 ?>
 <title>Simple Shop</title>
@@ -47,14 +56,13 @@ if (isset($_SESSION["user"])){
 if(isset($search)) {
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
-    if (!empty($sort)){
-        if($sort == "asc"){
-            $query = $query . " ORDER BY name ASC";
-        }
-        else{
-            $query = $query . " ORDER BY name DESC";
-        }
+    if($sort == "DESC"){
+        $query = $query . " ORDER BY " . $order . " " . $sort;
     }
+    else{
+        $query = $query . " ORDER BY " . $order . " " . $sort;
+    }
+
     #echo "<div>this is the query: " . $query . "</div>";       UNCOMMENT TO SHOW QUERY ON PAGE
     try {
         $stmt = getDB()->prepare($query);
@@ -83,7 +91,7 @@ note the structure and the ":" -->
         we're also using our helper function to safely return a value based on our key/column name.-->
         <li>
             <a href="?order=name&&sort=<?php echo $sort?>">Name</a>
-            <a href="?order=cost&&sort=<?php echo $sort?>">Cost</a>
+            <a href="?order=price&&sort=<?php echo $sort?>">Cost</a>
             <a href="?order=popularity&&sort=<?php echo $sort?>">Popularity</a>
             <a href="?order=date&&sort=<?php echo $sort?>">Date added</a>
         </li>
