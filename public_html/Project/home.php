@@ -5,6 +5,9 @@ $sort = "";
 if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
+if(isset($_POST["filter"])){
+    $filter = $_POST["filter"];
+}
 if(isset($_GET["order"])){
     $order = $_GET["order"];
 }
@@ -27,10 +30,10 @@ if (isset($_SESSION["user"])){
     <input type="text" name="search" placeholder="Search for product"
            value="<?php echo $search;?>"/>
     <a>By: </a>
-    <input type="radio" name="filter" id="asc" value="asc"/>
-    <label for="asc">Name</label>
-    <input type="radio" name="filter" id="desc" value="desc"/>
-    <label for="desc">Category</label>
+    <input type="radio" name="filter" id="name" value="name"/>
+    <label for="name">Name</label>
+    <input type="radio" name="filter" id="category" value="category"/>
+    <label for="category">Category</label>
     <input type="submit" value="Search"/>
 </form>
 <style>
@@ -54,7 +57,7 @@ if (isset($_SESSION["user"])){
 <?php
 if(isset($search)) {
     require("common.inc.php");
-    $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
+    $query = "SELECT * FROM Products WHERE " . ($search == "" ? "" : $filter) .  "LIKE CONCAT('%', :product, '%')";
     if(isset($order)){
         $query = $query . " ORDER BY " . $order . " " . $sort;
     }
