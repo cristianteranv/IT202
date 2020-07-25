@@ -23,13 +23,14 @@ if (isset($_SESSION["user"])){
 ?>
 
 <form method="POST">
-    <label for="search">Filter:</label>
+    <a>Filter: </a>
     <input type="text" name="search" placeholder="Search for product"
            value="<?php echo $search;?>"/>
-    <input type="radio" name="sort" id="asc" value="asc"/>
-    <label for="asc">Ascending</label>
-    <input type="radio" name="sort" id="desc" value="desc"/>
-    <label for="desc">Descending</label>
+    <a>By: </a>
+    <input type="radio" name="filter" id="asc" value="asc"/>
+    <label for="asc">Name</label>
+    <input type="radio" name="filter" id="desc" value="desc"/>
+    <label for="desc">Category</label>
     <input type="submit" value="Search"/>
 </form>
 <style>
