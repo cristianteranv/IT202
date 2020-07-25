@@ -53,10 +53,7 @@ if (isset($_SESSION["user"])){
 if(isset($search)) {
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
-    if(!empty($order)){
-        $query = $query . " ORDER BY " . $order . " " . $sort;
-    }
-    else{
+    if(isset($order)){
         $query = $query . " ORDER BY " . $order . " " . $sort;
     }
 
