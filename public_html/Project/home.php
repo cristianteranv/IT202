@@ -8,9 +8,6 @@ if(isset($_POST["search"])){
 if(isset($_GET["order"])){
     $order = $_GET["order"];
 }
-else{
-    $order = "name";
-}
 if(isset($_GET["sort"])){
     $sort = $_GET["sort"];
 }
