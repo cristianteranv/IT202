@@ -6,13 +6,13 @@ if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
 if(isset($_GET["order"])){
-    $order = $_POST["order"];
+    $order = $_GET["order"];
 }
 else{
     $order = "name";
 }
 if(isset($_GET["sort"])){
-    $sort = $_POST["sort"];
+    $sort = $_GET["sort"];
 }
 else{
     $sort = "DESC";
@@ -56,7 +56,7 @@ if (isset($_SESSION["user"])){
 if(isset($search)) {
     require("common.inc.php");
     $query = "SELECT * FROM Products WHERE name LIKE CONCAT('%', :product, '%')";
-    if($sort == "DESC"){
+    if(isset($order)){
         $query = $query . " ORDER BY " . $order . " " . $sort;
     }
     else{
@@ -90,7 +90,7 @@ note the structure and the ":" -->
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
         <li>
-            <a href="?order=name&&sort=<?php echo $sort?>">Name</a>
+            <a href="?order=name&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Name</a>
             <a href="?order=price&&sort=<?php echo $sort?>">Cost</a>
             <a href="?order=popularity&&sort=<?php echo $sort?>">Popularity</a>
             <a href="?order=date&&sort=<?php echo $sort?>">Date added</a>
