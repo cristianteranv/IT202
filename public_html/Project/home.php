@@ -81,13 +81,14 @@ note the structure and the ":" -->
     <ul style="text-align: center">
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
-        <li><a>ID</a><a>Name</a><a> </a><a> </a></li>
+        <li><a>Name</a><a>Cost</a><a>Popularity</a><a>Date added</a></li>
         <?php foreach($results as $row):?>
             <li>
-                <a style="width: 50px"><?php echo get($row, "id")?></a>
-                <a style="width: 100px"><?php echo get($row, "name")?></a>
-                <a style="width: 50px" href="edit.php?productId=<?php echo get($row, "id");?>">Edit</a>
-                <a style="width: 50px" href="delete.php?productId=<?php echo get($row, "id");?>">Delete</a>
+                <a style="width: 50px"><?php echo get($row, "name")?></a>
+                <a style="width: 100px"><?php echo get($row, "price")?></a>
+                <a style="width: 50px">Popularity</a>
+                <a style="width: 50px">Date</a>
+                <a style="width: 50px">Add to cart</a>
             </li>
         <?php endforeach;?>
     </ul>
