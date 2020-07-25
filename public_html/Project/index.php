@@ -1,6 +1,3 @@
 <?php
-    require ("config.php");
-    include("header.php");
-    echo "test";
+    header("Location: home.php");
 ?>
-<title>Home</title>
