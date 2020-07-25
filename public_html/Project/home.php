@@ -63,7 +63,7 @@ if(isset($search)) {
         $query = $query . " ORDER BY " . $order . " " . $sort;
     }
 
-    #echo "<div>this is the query: " . $query . "</div>";       UNCOMMENT TO SHOW QUERY ON PAGE
+    echo "<div>this is the query: " . $query . "</div>";       UNCOMMENT TO SHOW QUERY ON PAGE
     try {
         $stmt = getDB()->prepare($query);
         //Note: With a LIKE query, we must pass the % during the mapping
