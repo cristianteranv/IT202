@@ -81,11 +81,16 @@ note the structure and the ":" -->
     <ul style="text-align: center">
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
-        <li><a>Name</a><a>Cost</a><a>Popularity</a><a>Date added</a></li>
+        <li>
+            <a href="?order=name&&sort=<?php echo $sort?>">Name</a>
+            <a href="?order=cost&&sort=<?php echo $sort?>">Cost</a>
+            <a href="?order=popularity&&sort=<?php echo $sort?>">Popularity</a>
+            <a href="?order=date&&sort=<?php echo $sort?>">Date added</a>
+        </li>
         <?php foreach($results as $row):?>
             <li>
-                <a style="width: 50px" href="?order=name&&sort=$sort"><?php echo get($row, "name")?></a>
-                <a style="width: 100px" href="?order=name&&sort=<?php echo $sort?>$sort"><?php echo get($row, "price")?></a>
+                <a style="width: 50px"><?php echo get($row, "name")?></a>
+                <a style="width: 100px"><?php echo get($row, "price")?></a>
                 <a style="width: 100px">Popularity</a>
                 <a style="width: 100px">Date</a>
                 <a style="width: 100px">Add to cart</a>
