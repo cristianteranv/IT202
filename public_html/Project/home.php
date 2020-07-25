@@ -5,13 +5,13 @@ $sort = "";
 if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
-if(isset($_POST["order"])){
+if(isset($_GET["order"])){
     $order = $_POST["order"];
 }
 else{
     $order = "name";
 }
-if(isset($_POST["sort"])){
+if(isset($_GET["sort"])){
     $sort = $_POST["sort"];
 }
 else{
