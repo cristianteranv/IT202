@@ -84,8 +84,8 @@ note the structure and the ":" -->
         <li><a>Name</a><a>Cost</a><a>Popularity</a><a>Date added</a></li>
         <?php foreach($results as $row):?>
             <li>
-                <a style="width: 50px"><?php echo get($row, "name")?></a>
-                <a style="width: 100px"><?php echo get($row, "price")?></a>
+                <a style="width: 50px" href="?order=name&&sort=$sort"><?php echo get($row, "name")?></a>
+                <a style="width: 100px" href="?order=name&&sort=<?php echo $sort?>$sort"><?php echo get($row, "price")?></a>
                 <a style="width: 50px">Popularity</a>
                 <a style="width: 50px">Date</a>
                 <a style="width: 50px">Add to cart</a>
