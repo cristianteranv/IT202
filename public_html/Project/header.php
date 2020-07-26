@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/myjs.js"></script>
+    <script src="/public_html/Project/myjs.js"></script>
 </head>
 <?php
 session_start();
