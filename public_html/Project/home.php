@@ -105,7 +105,7 @@ note the structure and the ":" -->
                 <form method="post" class="cartForm">
                     <div>
                         <input type="number" name="purchaseQuantity" value="1" style="width: 50%">
-                        <input type="submit" class="subCart" value="Add to cart" style="width: 100%; padding: 3px; margin: 2px;">
+                        <input type="submit" id="subCart" class="subCart" value="Add to cart" style="width: 100%; padding: 3px; margin: 2px;">
                     </div>
                 </form>
             </li>
