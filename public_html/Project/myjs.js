@@ -5,8 +5,8 @@ $(document).ready(function(){
         return false;
     })
 
-    $('form.cartForm').click(function () {
+    /*$('form.cartForm').click(function () {
         alert("hi2");
         return false;
-    })
+    })*/
 });
