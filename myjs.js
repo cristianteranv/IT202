@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".subCart").click(function () {
-        alert("added!");
-    });
+    $('form.subCart').click(function (e) {
 
+        alert("hi");
+    })
 });
