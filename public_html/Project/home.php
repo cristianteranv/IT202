@@ -102,9 +102,9 @@ note the structure and the ":" -->
                 <a style="width: 100px"><?php echo get($row, "category")?></a>
                 <a style="width: 100px">Popularity</a>
                 <a style="width: 100px"><?php echo get($row, "created")?></a>
-                <form method="post" style="width: 100px; height: 50px; padding: 3px; margin: 3px auto auto;">
+                <form method="post" style="width: 150px; height: 50px; padding: 3px; margin: 3px auto auto;">
                     <input type="number" name="purchaseQuantity" value="1" style="width: 50%">
-                    <input type="submit" class="subCart" value="Add to cart" style="width: 100%">
+                    <input type="submit" class="subCart" value="Add to cart" style="width: 100%; padding: 3px; margin: 2px;">
                 </form>
             </li>
         <?php endforeach;?>
