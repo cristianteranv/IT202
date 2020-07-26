@@ -6,7 +6,7 @@ form {
     padding: 15px 30px;
 }
 
-li form.cartForm{
+ul li form.cartForm{
      width: 50px;
      height: 50px;
      padding: 3px;

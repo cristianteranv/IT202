@@ -93,7 +93,7 @@ note the structure and the ":" -->
             <a href="?order=price&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Cost</a>
             <a href="?order=category&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Category</a>
             <a href="?order=popularity&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Popularity</a>
-            <a href="?order=date&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Date added</a>
+            <a href="?order=created&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Date added</a>
         </li>
         <?php foreach($results as $row):?>
             <li>
