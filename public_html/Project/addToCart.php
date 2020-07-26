@@ -1,3 +1,3 @@
 <?php
-    echo $_POST["price"] . "  " . $_POST["userId"];
+    echo var_export($_POST);
 ?>
