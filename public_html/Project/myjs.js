@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('input.subCart').click(function () {
+    $('form.subCart').submit(function () {
         var formValues = $(this).serialize();
         $.post("addToCart.php", formValues,
             function (data) {
