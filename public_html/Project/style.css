@@ -10,7 +10,7 @@ h1{
     margin: auto;
 }
 
-.cartForm{
+form.cartForm{
     width: 150px;
     height: 50px;
     padding: 3px;
