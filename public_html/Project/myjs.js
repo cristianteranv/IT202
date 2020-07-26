@@ -1,9 +1,7 @@
 $(document).ready(function(){
     $('form.cartForm').click(function () {
-        $.post("addToCart.php", {
-                price : this.price,
-                userId: this.userId,
-            },
+        var formValues = $(this).serialize();
+        $.post("addToCart.php", formValues,
             function (data) {
             alert("Data: " + data);
         });
