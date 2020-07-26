@@ -101,8 +101,11 @@ note the structure and the ":" -->
                 <a style="width: 100px"><?php echo get($row, "price")?></a>
                 <a style="width: 100px"><?php echo get($row, "category")?></a>
                 <a style="width: 100px">Popularity</a>
-                <a style="width: 100px">Date</a>
-                <a style="width: 100px">Add to cart</a>
+                <a style="width: 100px"><?php echo get($row, "created")?></a>
+                <form method="post">
+                    <input type="number" name="purchaseQuantity">
+                    <input type="submit" class="subCart" value="Add to cart">
+                </form>
             </li>
         <?php endforeach;?>
     </ul>
