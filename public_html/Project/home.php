@@ -103,7 +103,7 @@ note the structure and the ":" -->
                 <a style="width: 100px">Popularity</a>
                 <a style="width: 100px"><?php echo get($row, "created")?></a>
                 <form method="post" class="cartForm">
-                    <input type="">
+                    <input type="" hidden>
                     <input type="number" name="purchaseQuantity" value="1" style="width: 50%">
                     <input type="submit" id="subCart" class="subCart" value="Add to cart" style="width: 100%; padding: 3px; margin: 2px;">
                 </form>
