@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('form.cartForm').click(function () {
-        alert("hi2");
-        return false;
+        $.post("addToCart.php", function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+        });
     })
 });
