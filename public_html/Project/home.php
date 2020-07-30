@@ -36,24 +36,7 @@ if (isset($_SESSION["user"])){
     <label for="category">Category</label>
     <input type="submit" value="Search"/>
 </form>
-<style>
-    li{
-        display: table-row;
-        height: 30px;
-        margin: 10px;
-        vertical-align: middle;
-    }
-    li a {
-        display:table-cell;
-        vertical-align: middle;
-        height:10px;
-    }
-    ul{
-        display: table;
-        text-align: center;
-        margin: 10px auto;
-    }
-</style>
+
 <?php
 if(isset($search)) {
     require("common.inc.php");
@@ -85,10 +68,10 @@ note the structure and the ":" -->
         echo "<div style='text-align: center; margin: 10px'>Sort value is: " . $sort . "</div>";
     }
     ?>
-    <ul style="text-align: center">
+    <ul class="itemList">
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
-        <li>
+        <li class="itemHeader">
             <a href="?order=name&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Name</a>
             <a href="?order=price&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Cost</a>
             <a href="?order=category&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Category</a>
@@ -96,12 +79,12 @@ note the structure and the ":" -->
             <a href="?order=created&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Date added</a>
         </li>
         <?php foreach($results as $row):?>
-            <li>
-                <a style="width: 50px"><?php echo get($row, "name")?></a>
-                <a style="width: 100px"><?php echo get($row, "price")?></a>
-                <a style="width: 100px"><?php echo get($row, "category")?></a>
-                <a style="width: 100px">Popularity</a>
-                <a style="width: 100px"><?php echo get($row, "created")?></a>
+            <li class="itemListing">
+                <a class="itemCell" style="width: 50px"><?php echo get($row, "name")?></a>
+                <a class="itemCell" style="width: 100px"><?php echo get($row, "price")?></a>
+                <a class="itemCell" style="width: 100px"><?php echo get($row, "category")?></a>
+                <a class="itemCell" style="width: 100px">Popularity</a>
+                <a class="itemCell" style="width: 100px"><?php echo get($row, "created")?></a>
                 <form method="post" class="cartForm">
                     <input type="number" name="price" value="<?php echo get($row, "price")?>" hidden>
                     <input type="number" name="userId" value="<?php echo $_SESSION["user"]["id"]?>" hidden>

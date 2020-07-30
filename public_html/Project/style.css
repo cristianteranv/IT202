@@ -47,18 +47,7 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #4a2271;
 }
-/*Lists*/
-li{
-    display: table-row;
-    height: 30px;
-    margin: 10px;
-    vertical-align: middle;
-}
-li a {
-    display:table-cell;
-    vertical-align: middle;
-    height:10px;
-}
+
 /*Header menu*/
 header {
     width: 100%;
@@ -111,6 +100,23 @@ textarea{
 #menu ul li{
     display: inline-flex;
     align-items: center
+}
+
+li.itemListing{
+    display: table-row;
+    height: 30px;
+    margin: 10px;
+    vertical-align: middle;
+}
+li a.itemCell {
+    display:table-cell;
+    vertical-align: middle;
+    height:10px;
+}
+ul.itemList{
+    display: table;
+    text-align: center;
+    margin: 10px auto;
 }
 
 ul li form{
