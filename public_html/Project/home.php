@@ -72,11 +72,11 @@ note the structure and the ":" -->
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
         we're also using our helper function to safely return a value based on our key/column name.-->
         <li class="itemHeader">
-            <a href="?order=name&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Name</a>
-            <a href="?order=price&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Cost</a>
-            <a href="?order=category&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Category</a>
-            <a href="?order=popularity&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Popularity</a>
-            <a href="?order=created&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Date added</a>
+            <a class="itemCell" href="?order=name&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Name</a>
+            <a class="itemCell" href="?order=price&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Cost</a>
+            <a class="itemCell" href="?order=category&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Category</a>
+            <a class="itemCell" href="?order=popularity&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Popularity</a>
+            <a class="itemCell" href="?order=created&&sort=<?php echo ($sort == "DESC"? "ASC": "DESC")?>">Date added</a>
         </li>
         <?php foreach($results as $row):?>
             <li class="itemListing">
