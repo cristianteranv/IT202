@@ -102,7 +102,7 @@ textarea{
     align-items: center
 }
 
-li.itemListing.itemHeader{
+li.itemListing{
     display: table-row;
     height: 30px;
     margin: 10px;
