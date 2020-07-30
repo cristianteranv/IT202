@@ -106,8 +106,8 @@ note the structure and the ":" -->
                     <input type="number" name="price" value="<?php echo get($row, "price")?>" hidden>
                     <input type="number" name="userId" value="<?php echo $_SESSION["user"]["id"]?>" hidden>
                     <input type="number" name="productId" value="<?php echo get($row, "id")?>" hidden>
-                    <input type="number" name="purchaseQuantity" value="1" style="width: 100%">
-                    <input type="submit" id="subCart" class="subCart" value="Add to cart" style="width: 100%; padding: 3px; margin: 2px;">
+                    <input type="number" name="purchaseQuantity" value="1" style="width: 30%">
+                    <input type="submit" id="subCart" class="subCart" value="Add to cart" style="width: 70%; padding: 3px; margin: 2px;">
                 </form>
             </li>
         <?php endforeach;?>
