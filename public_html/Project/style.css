@@ -102,12 +102,13 @@ textarea{
     align-items: center
 }
 
-li.itemListing{
+li.itemListing.itemHeader{
     display: table-row;
     height: 30px;
     margin: 10px;
     vertical-align: middle;
 }
+
 li a.itemCell {
     display:table-cell;
     vertical-align: middle;
