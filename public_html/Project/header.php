@@ -24,5 +24,8 @@ session_start();
                 ?>
             </ul>
         </div>
+        <div id="cartOrStore">
+            <a href="cart.php">Cart</a>
+        </div>
     </nav>
 </header>
