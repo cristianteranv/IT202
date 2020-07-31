@@ -58,7 +58,7 @@ if(isset($_POST["created"])){
             } else {
                 echo var_export($result, true);
                 if ($result) {
-                    echo "Succes inserting " . $product . " into the database!";
+                    echo "Success inserting " . $product . " into the database!";
                 } else {
                     echo "error while inserting record";
                 }

@@ -106,6 +106,13 @@ textarea{
     align-items: center
 }
 
+nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
 li.itemListing{
     display: table-row;
     height: 30px;
