@@ -2,7 +2,8 @@ $(document).ready(function(){
     $('form.cartForm').submit(function () {
         var formValues = $(this).serialize();
         if(formValues.includes("login=false")){
-            window.location = "https://it202-450.herokuapp.com/public_html/Project/login.php", true;
+            alert("You must be logged in!");
+            window.location = "https://it202-450.herokuapp.com/public_html/Project/login.php";
             return false;
         }
         else {
