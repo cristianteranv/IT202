@@ -25,7 +25,12 @@ session_start();
             </ul>
         </div>
         <div id="cartOrStore">
-            <a href="cart.php">Cart</a>
+            <ul>
+                <li>
+                    <a href="cart.php">Cart</a>
+                </li>
+            </ul>
+
         </div>
     </nav>
 </header>

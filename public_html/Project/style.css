@@ -97,6 +97,15 @@ textarea{
     font-family: Arial;
 }
 
+#cartOrStore, #cartOrStore ul{
+    height: 100%;
+}
+
+#cartOrStore ul li{
+    display: inline-flex;
+    align-items: center;
+}
+
 #menu, #menu ul {
     height: 100%;
 }
@@ -106,12 +115,6 @@ textarea{
     align-items: center
 }
 
-nav div a{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-}
 
 li.itemListing{
     display: table-row;
