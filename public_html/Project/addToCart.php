@@ -17,10 +17,10 @@
             ));
             $e = $stmt->errorInfo();
             if ($e[0] != "00000") {
-                echo var_export($e, true);
+                echo "Is this it?\n";
             }
             else {
-                echo var_export($result, true);
+                echo "Or is it this?\n";
                 if ($result) {
                     echo "Successfully added to cart!";
                 } else {
