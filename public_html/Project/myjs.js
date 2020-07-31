@@ -3,8 +3,7 @@ $(document).ready(function(){
 
         var formValues = $(this).serialize();
         if(formValues.includes("login=false")){
-            alert("You must be logged in!");
-            window.location = "https://it202-450.herokuapp.com/public_html/Project/login.php";
+            window.location = "login.php";
         }
         else {
             $.post("addToCart.php", formValues,
