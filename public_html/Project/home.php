@@ -87,7 +87,7 @@ note the structure and the ":" -->
                 <a class="itemCell" style="width: 100px">Popularity</a>
                 <a class="itemCell" style="width: 100px"><?php echo get($row, "created")?></a>
                 <form method="post" class="cartForm">
-                    <input type="text" name="login" id="login" value="<?php echo (get($_SESSION["user"])?"true":"false"); ?>" hidden>
+                    <input type="text" name="login" id="login" value="<?php echo (get($_SESSION, "user", false)?"true":"false"); ?>" hidden>
                     <input type="number" name="price" value="<?php echo get($row, "price")?>" hidden>
                     <input type="number" name="userId" value="<?php echo $_SESSION["user"]["id"]?>" hidden>
                     <input type="number" name="productId" value="<?php echo get($row, "id")?>" hidden>
