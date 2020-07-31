@@ -7,6 +7,6 @@
     $productId = $_POST["productId"];
     $quantity = $_POST["purchaseQuantity"];
     if (!empty($userId) && !empty($price) && !empty($productId) && !empty($quantity)){
-        $stmt =
+        $stmt = $db->prepare("INSERT INTO Carts VALUES")
     }
 ?>

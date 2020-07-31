@@ -106,7 +106,7 @@ textarea{
     align-items: center
 }
 
-nav a{
+nav div a{
     display: inline-block;
     text-decoration: none;
     color: white;
