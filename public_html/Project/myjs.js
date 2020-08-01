@@ -10,8 +10,8 @@ $(document).ready(function(){
             $.post(
                 "addToCart.php",
                 formValues,
-                function (data, status, xhr) {
-                    alert("xhr: " + xhr);
+                function (data) {
+                    alert("data: " + typeof (data));
                 }
             );
         }
