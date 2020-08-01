@@ -17,10 +17,10 @@
             ));
             $e = $stmt->errorInfo();
             if ($e[0] != "00000") {
-                echo "Is this it?\n";
+                echo json_encode("Is this it?\n");
             }
             else {
-                echo "Or is it this?\n";
+                echo json_encode("Or is it this?\n");
                 if ($result) {
                     echo "Successfully added to cart!";
                 } else {
@@ -29,7 +29,7 @@
             }
         }
         catch (Exception $e){
-            echo "maybe this";
+            echo json_encode("maybe this");
         }
     }
     else{
