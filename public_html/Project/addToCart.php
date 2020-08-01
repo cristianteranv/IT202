@@ -15,12 +15,7 @@
                 ":quantity" => $quantity,
                 ":price" => $price
             ));
-            if (empty($stmt->errorInfo())){
-                echo "Success";
-            }
-            else{
-                echo "Error";
-            }
+            echo "success";
         }
         catch (Exception $e){
             echo $e->getMessage();

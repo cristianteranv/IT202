@@ -11,7 +11,7 @@ $(document).ready(function(){
                 "addToCart.php",
                 formValues,
                 function (data) {
-                    console.log(data);
+                    alert("Data: " + data);
                 }
             );
         }
