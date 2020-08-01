@@ -29,16 +29,16 @@
                     ));
                     $ee = $stmt->errorInfo();
                     if($ee[0] != "00000"){
-                        echo "error when updating quantity";
+                        echo "Error while updating quantity";
                     }
                     else{
-                        echo "success updating quantity";
+                        echo "Successfully updated quantity!";
                     }
                 }
                 else{
                     /*    We should create new row     */
                     $stmt = $db->prepare("INSERT INTO Carts(userId, productId, quantity, price) VALUES (:userId, :productId, :quantity, :price)");
-                    $result = $stmt->execute(array(
+                    $stmt->execute(array(
                         ":userId" => $userId,
                         ":productId" => $productId,
                         ":quantity" => $quantity,
@@ -46,38 +46,13 @@
                     ));
                     $e = $stmt->errorInfo();
                     if ($e[0] != "00000") {
-                        echo var_export($e, true);
+                        echo "Error while adding to cart.";
                     }
                     else {
-                        echo var_export($result);
-                        if ($result) {
-                            echo "Successfully added to cart!";
-                        } else {
-                            echo "Error while adding to cart";
-                        }
+                        echo "Successfully added to cart!";
                     }
                 }
             }
-/*
-            $stmt = $db->prepare("INSERT INTO Carts(userId, productId, quantity, price) VALUES (:userId, :productId, :quantity, :price)");
-            $result = $stmt->execute(array(
-                ":userId" => $userId,
-                ":productId" => $productId,
-                ":quantity" => $quantity,
-                ":price" => $price
-            ));
-            $e = $stmt->errorInfo();
-            if ($e[0] != "00000") {
-                echo var_export($e, true);
-            }
-            else {
-                echo var_export($result, true);
-                if ($result) {
-                    echo "Successfully added to cart!";
-                } else {
-                    echo "Error while adding to cart";
-                }
-            }*/
         }
         catch (Exception $e){
             echo $e->getMessage();
