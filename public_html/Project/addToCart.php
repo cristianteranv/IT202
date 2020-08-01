@@ -7,7 +7,7 @@
             $productId = $_POST["productId"];
             $quantity = $_POST["purchaseQuantity"];
             $price = $_POST["price"];
-            $stmt = $db->prepare("SELECT * FROM CARTS WHERE userId = :userId AND productId= :productId");
+            $stmt = $db->prepare("SELECT * FROM Carts WHERE userId = :userId AND productId= :productId");
             $stmt->execute(array(
                 ":userId" => $userId,
                 ":productId" => $productId
@@ -19,7 +19,7 @@
             else{
                 echo "\$result is false\n" .  var_export($result);
             }
-            /*
+/*
             $stmt = $db->prepare("INSERT INTO Carts(userId, productId, quantity, price) VALUES (:userId, :productId, :quantity, :price)");
             $result = $stmt->execute(array(
                 ":userId" => $userId,
