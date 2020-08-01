@@ -14,9 +14,5 @@
             ":quantity" => $quantity,
             ":price" => $price
         ));
-        echo "success";
-    }
-    else{
-        echo "Error while receiving data.";
     }
 ?>
