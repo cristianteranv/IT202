@@ -7,10 +7,13 @@ $(document).ready(function(){
             return false;
         }
         else {
-            $.post("addToCart.php", formValues,
-                function (data) {
-                    alert("Data: " + data);
-                });
+            $.post(
+                "addToCart.php",
+                formValues,
+                function (data, status, xhr) {
+                    alert("status: " + status);
+                }
+            );
         }
     });
 });
