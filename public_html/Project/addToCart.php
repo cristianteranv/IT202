@@ -1,5 +1,4 @@
 <?php
-    include("header.php");
     require("common.inc.php");
     $db = getDB();
     if (isset($_POST["userId"]) && isset($_POST["productId"]) && isset($_POST["purchaseQuantity"]) && isset($_POST["price"])) {
