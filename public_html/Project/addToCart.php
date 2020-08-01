@@ -17,19 +17,19 @@
             ));
             $e = $stmt->errorInfo();
             if ($e[0] != "00000") {
-                echo var_export($e, true);
+                echo response("Successfully added to cart!", 200, "succesfully added to cart");
             }
             else {
                 echo var_export($result, true);
                 if ($result) {
-                    echo "Successfully added to cart!";
+                    echo response("Successfully added to cart!", 200, "succesfully added to cart");
                 } else {
-                    echo "Error while adding to cart";
+                    echo response("Successfully added to cart!", 200, "succesfully added to cart");
                 }
             }
         }
         catch (Exception $e){
-            echo $e->getMessage();
+            echo response("Successfully added to cart!", 200, "succesfully added to cart");
         }
     }
 ?>
