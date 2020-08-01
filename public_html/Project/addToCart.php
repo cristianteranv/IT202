@@ -1,4 +1,5 @@
 <?php
+    include("header.php");
     require("common.inc.php");
     $db = getDB();
     if (isset($_POST["userId"]) && isset($_POST["productId"]) && isset($_POST["purchaseQuantity"]) && isset($_POST["price"])) {
@@ -16,19 +17,19 @@
             ));
             $e = $stmt->errorInfo();
             if ($e[0] != "00000") {
-                echo response("Successfully added to cart!", 200, "succesfully added to cart");
+                echo var_export($e, true);
             }
             else {
                 echo var_export($result, true);
                 if ($result) {
-                    echo response("Successfully added to cart!", 200, "succesfully added to cart");
+                    echo "Successfully added to cart!";
                 } else {
-                    echo response("Successfully added to cart!", 200, "succesfully added to cart");
+                    echo "Error while adding to cart";
                 }
             }
         }
         catch (Exception $e){
-            echo response("Successfully added to cart!", 200, "succesfully added to cart");
+            echo $e->getMessage();
         }
     }
 ?>
