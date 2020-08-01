@@ -12,12 +12,12 @@
                 ":userId" => $userId,
                 ":productId" => $productId
             ));
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if($result){
-                echo "We should update purchase quantity";
+                echo "\$result is true\n" . var_export($result);
             }
             else{
-                echo "We should create new row";
+                echo "\$result is false\n" .  var_export($result);
             }
             /*
             $stmt = $db->prepare("INSERT INTO Carts(userId, productId, quantity, price) VALUES (:userId, :productId, :quantity, :price)");
