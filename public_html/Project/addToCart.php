@@ -15,21 +15,15 @@
                 ":quantity" => $quantity,
                 ":price" => $price
             ));
-            $e = $stmt->errorInfo();
-            if ($e[0] != "00000") {
-                echo json_encode("Is this it?\n");
+            if (empty($stmt->errorInfo())){
+                echo "Success";
             }
-            else {
-                echo json_encode("Or is it this?\n");
-                if ($result) {
-                    echo "Successfully added to cart!";
-                } else {
-                    echo "Error while adding to cart";
-                }
+            else{
+                echo "Error";
             }
         }
         catch (Exception $e){
-            echo json_encode("maybe this");
+            echo $e->getMessage();
         }
     }
     else{
