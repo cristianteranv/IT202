@@ -7,6 +7,19 @@
             $productId = $_POST["productId"];
             $quantity = $_POST["purchaseQuantity"];
             $price = $_POST["price"];
+            $stmt = $db->prepare("SELECT * FROM CARTS WHERE userId = :userId AND productId= :productId");
+            $stmt->execute(array(
+                ":userId" => $userId,
+                ":productId" => $productId
+            ));
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($result){
+                echo "We should update purchase quantity";
+            }
+            else{
+                echo "We should create new row";
+            }
+            /*
             $stmt = $db->prepare("INSERT INTO Carts(userId, productId, quantity, price) VALUES (:userId, :productId, :quantity, :price)");
             $result = $stmt->execute(array(
                 ":userId" => $userId,
@@ -25,7 +38,7 @@
                 } else {
                     echo "Error while adding to cart";
                 }
-            }
+            }*/
         }
         catch (Exception $e){
             echo $e->getMessage();
