@@ -49,7 +49,7 @@
                         echo var_export($e, true);
                     }
                     else {
-                        echo var_export($result, true);
+                        echo var_export($result);
                         if ($result) {
                             echo "Successfully added to cart!";
                         } else {
