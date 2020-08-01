@@ -32,4 +32,7 @@
             echo "maybe this";
         }
     }
+    else{
+        echo "Error while receiving data.";
+    }
 ?>
