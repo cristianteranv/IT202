@@ -21,7 +21,7 @@ else{
 <title>Simple Shop</title>
 <?php
 if (isset($_SESSION["user"])){
-    echo "<div style='font-size: 2vw'>Welcome, " . $_SESSION["user"]["email"] . "</div>";
+    echo "<div style='font-size: 2vw'>Welcome, " . (empty($_SESSION["user"]["first_name"])? $_SESSION["user"]["email"] : $_SESSION["user"]["first_name"]) . "</div>";
 }
 ?>
 
