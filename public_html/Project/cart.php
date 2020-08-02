@@ -19,17 +19,17 @@
                         <a class="itemCell">Total price</a>
                     </li>
             <?php foreach($results as $row):?>
-                    <li class="itemListing">
+                    <li class="itemListing" style="height:">
                         <a class="itemCell" style="width: 50px"><?php echo get($row, "name")?></a>
                         <a class="itemCell" style="width: 100px"><?php echo get($row, "price")?></a>
                         <a class="itemCell" style="width: 100px"><?php echo get($row, "quantity")?></a>
                         <a class="itemCell" style="width: 100px"><?php echo get($row, "total"); $total = $total + get($row, "total");?></a>
-                        <form method="post" class="editQuantity">
+                        <form method="post" class="editQuantity" style="height: 35px">
                             <input type="number" name="cartId" value="<?php echo get($row, "id")?>" hidden>
                             <input type="number" name="quantity" value="<?php echo get($row, "quantity")?>" min="1" style="width: 30%">
                             <input type="submit" id="subQuantityEdit" value="Edit quantity" style="width: 70%; padding: 3px; margin: 2px;">
                         </form>
-                        <form method="post" class="editQuantity">
+                        <form method="post" class="editQuantity" style="height: 35px">
                             <input type="number" name="cartId" value="<?php echo get($row, "id")?>" hidden>
                             <input type="number" name="quantity" value="0" hidden>
                             <input type="submit" id="removeItem" value="Remove item" style="width: 100%; padding: 3px; margin: 2px;">

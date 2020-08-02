@@ -23,6 +23,7 @@ $(document).ready(function(){
             formValues,
             function (data) {
                 alert("data: " + data);
+                location.reload(true);
             }
         );
     });
