@@ -34,5 +34,20 @@ function response($data, $status = 200, $message = ""){
     return array("status" => $status, "message" => $message, "data" => $data);
 }
 
+function is_logged_in($redirect = true){
+    if(get($_SESSION, "user", false)){
+        echo "<div>true</div>";
+        return true;
+    }
+    if($redirect){
+        echo "<div>false</div>";
+        flash("You must be logged in to access that page.", "warning");
+        die(header("Location: login.php"));
+    }
+    else{
+        return false;
+    }
+}
+
 
 ?>
