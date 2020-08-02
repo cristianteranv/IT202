@@ -6,8 +6,8 @@
         echo "<div>You are logged in</div>";
     }
     else{
-        echo "<div>does it work now</div>";
-        header("login.php");
+        alert("You need to log in");
+        header("Location: login.php");
     }
     /*$userId = $_SESSION["user"]["id"];*
     $db = getDB();
