@@ -16,5 +16,14 @@ $(document).ready(function(){
             );
         }
     });
-
+    $('form.editQuantity').submit(function (){
+        var formValues = $(this).serialize();
+        $.post(
+            "editQuantity.php",
+            formValues,
+            function (data) {
+                alert("data: " + data);
+            }
+        );
+    });
 });
