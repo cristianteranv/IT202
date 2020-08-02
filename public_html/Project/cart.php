@@ -2,7 +2,7 @@
     include("header.php");
     require_once("common.inc.php");
     echo "<title>Your cart</title><h1>Cart Items</h1>";
-    if(isset($_SESSION["user"])){
+    if(get($_SESSION,"user",false)){
         echo "<div>You are logged in</div>";
     }
     else{
