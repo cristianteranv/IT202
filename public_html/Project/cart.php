@@ -2,6 +2,7 @@
     include("header.php");
     echo "<title>Your cart</title><h1>Cart Items</h1>";
     if(!isset($_SESSION["user"])){
+        echo "<div>you are not logged in</div>";
         flash("You must log in to see your cart.");
         getFlashMessages();
         header("login.php");
