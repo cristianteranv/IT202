@@ -30,7 +30,7 @@
                         </form>
                         <form method="post" class="editQuantity">
                             <input type="number" name="quantity" value="0" hidden>
-                            <input type="submit" id="removeItem" value="Remove item">
+                            <input type="submit" id="removeItem" value="Remove item" style="width: 100%; padding: 3px; margin: 2px;>
                         </form>
                     </li>
             <?php endforeach;?>
