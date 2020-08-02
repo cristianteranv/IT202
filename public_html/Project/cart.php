@@ -6,7 +6,7 @@
         echo "<div>You are logged in</div>";
     }
     else{
-        echo "<script type='text/javascript'>alert('You need to log in to see your cart.')</script>";
+        echo "<div>does it work now</div>";
         header("login.php");
     }
     /*$userId = $_SESSION["user"]["id"];*
