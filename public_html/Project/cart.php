@@ -1,7 +1,12 @@
 <?php
     include("header.php");
     echo "<title>Your cart</title><h1>Cart Items</h1>";
-    is_logged_in(true);
+    if(!isset($_SESSION["user"])){
+        echo "<div>You are not logged in</div>";
+    }
+    else{
+        echo "<div>You are logged in</div>";
+    }
     //if empty
     // your cart is empty :(
     //else
