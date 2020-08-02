@@ -9,7 +9,7 @@
         alert("You need to log in to see your cart.");
         header("login.php");
     }
-    $userId = $_SESSION["user"]["id"];
+    /*$userId = $_SESSION["user"]["id"];*
     $db = getDB();
     $stmt = $db->prepare("SELECT * FROM Carts WHERE userId = :userId");
     $stmt->execute(array("userId"=>$userId));
@@ -19,7 +19,7 @@
     }
     else{
         echo "your items go here";
-    }
+    }/
 /*if empty
 your cart is empty :(
 else
