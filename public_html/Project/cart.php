@@ -6,9 +6,7 @@
         echo "<div>You are logged in</div>";
     }
     else{
-        echo "<div>you are not logged in</div>";
-        flash("You must log in to see your cart.");
-        getFlashMessages();
+        alert("You need to log in to see your cart.");
         header("login.php");
     }
     /*if(!isset($_SESSION["user"])){
