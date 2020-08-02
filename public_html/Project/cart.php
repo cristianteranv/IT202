@@ -17,15 +17,14 @@
     if(!$results){
         echo "<div>Your cart is empty, time to do some shopping!</div>";
     }
-    else{?>
-        <ul><li><a>some item</a></li></ul>;
-<?php
+    else{
+        echo "your items go here";
     }
-    echo "<div>it works</div>";
+/*if empty
+your cart is empty :(
+else
+here are the items in your cart:
+  list
+purchase items (remove items from cart, add to orders table)*/
 ?>
-    //if empty
-    // your cart is empty :(
-    //else
-    //  here are the items in your cart:
-    //      list
-    //  purchase items (remove items from cart, add to orders table)
+
