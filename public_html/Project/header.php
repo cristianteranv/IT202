@@ -27,7 +27,16 @@ session_start();
         <div id="cartOrStore">
             <ul>
                 <li>
-                    <a href="cart.php">Cart</a>
+                    <?php
+                        if(isset($_SESSION["user"])){
+                            echo "<a href='cart.php'>Cart</a>";
+                        }
+                        else{
+                            echo "<a onclick='myFunction()'>Cart</a>";
+                            echo "<script type='text/javascript'>function myFunction(){alert('You need to log in')}</script>";
+                        }
+
+                    ?>
                 </li>
             </ul>
 
