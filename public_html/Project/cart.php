@@ -37,6 +37,13 @@
                     </li>
             <?php endforeach;?>
                 </ul>
+            <?php
+                echo "</br></br><div style='text-align: center'>Your total is " . $total . "</div>";
+                ?>
+                <form method="post" class="buy" style="border: none; margin: 0px auto auto">
+                    <input type="number" name="userId" value="<?php echo $userId; ?>" hidden>
+                    <input type="submit" value="Place order" id="buy" style="height: 40px; width: 100%; padding: 3px; margin: 2px">
+                </form>
             <?php else:
                 echo "<div>Your cart is empty, time to do some shopping!</div>";
             endif;
@@ -44,13 +51,6 @@
         catch (Exception $e){
             echo $e->getMessage();
         }
-        echo "</br></br><div>Your total is " . $total . "</div>";
-        ?>
-        <form method="post" class="buy">
-            <input type="number" name="userId" value="<?php echo $userId; ?>" hidden>
-            <input type="submit" value="Place order" id="buy" style="width: 100%; padding: 3px; margin: 2px;">
-        </form>
-<?php
     }
     else{
         alert("You need to log in");
