@@ -11,19 +11,19 @@
         $stmt->execute(array(":userId"=>$userId));
         $e = $stmt->errorInfo();
         if($e[0] != "00000"){
-            $text = $text . "Successfully placed the order!\n";
+            $text = $text . "Error while placing order.\n";
         }
         else{
-            $text = $text . "Error while placing order.\n";
+            $text = $text . "Successfully placed the order!\n";
         }
         $stmt = $db->prepare("DELETE FROM Carts WHERE userId = :userId");
         $stmt->execute(array(":userId"=>$userId));
         $e = $stmt->errorInfo();
         if($e[0] != "00000"){
-            $text = $text . "Successfully emptied your cart.\n";
+            $text = $text .  "Error while emptying your cart.\n";
         }
         else{
-            $text = $text .  "Error while emptying your cart.\n";
+            $text = $text . "Successfully emptied your cart.\n";
         }
         echo $text;
     }
