@@ -8,6 +8,12 @@ include("header.php");
 	<label for="email">Email
 	<input type="email" id="email" name="email"/>
 	</label>
+    <label for="fname">First Name
+        <input type="text" id="fname" name="fname"/>
+    </label>
+    <label for="lname">Last name
+        <input type="email" id="lname" name="lname"/>
+    </label>
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
 	</label>
@@ -26,6 +32,8 @@ if(isset($_POST["register"])){
 		$password = $_POST["password"];
 		$cpassword = $_POST["cpassword"];
 		$email = $_POST['email'];
+		$fname = $_POST['fname'];
+		$lname = $_POST['lname'];
 		if (!(empty($password) || empty($email) || empty($cpassword))){
             if ($password == $cpassword) {
                 #echo "<div>Passwords Match </div>";
@@ -34,16 +42,18 @@ if(isset($_POST["register"])){
                 try {
                     $db = new PDO($connection_string, $dbuser, $dbpass);
                     $hash = password_hash($password, PASSWORD_BCRYPT);
-                    $stmt = $db->prepare("INSERT INTO Users (email, password) VALUES(:email, :password)");
+                    $stmt = $db->prepare("INSERT INTO Users (email, password, first_name, last_name) VALUES(:email, :password, :fname, :lname)");
                     $stmt->execute(array(
                         ":email" => $email,
-                        ":password" => $hash
+                        ":password" => $hash,
+                        ":fname" => $fname,
+                        ":lname" => $lname
                     ));
                     $e = $stmt->errorInfo();
                     if ($e[0] != "00000") {
                         echo "<div>An account has already been created with that email.</div>";
                     } else {
-                        echo "<div>Succesfully registered</div>";
+                        echo "<div>Successfully registered</div>";
                     }
                 } catch (Exception $e) {
                     echo "<div>An account has already been created with that email.</div>";
