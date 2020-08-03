@@ -2,6 +2,17 @@
 require ("config.php");
 include("header.php");
 ?>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
 <title>Registration</title>
 <h1>Register</h1>
 <form method="post">
@@ -11,8 +22,8 @@ include("header.php");
     <label for="fname">First Name
         <input type="text" id="fname" name="fname"/>
     </label>
-    <label for="lname">Last name
-        <input type="email" id="lname" name="lname"/>
+    <label for="lname">Last Name
+        <input type="text" id="lname" name="lname"/>
     </label>
 	<label for="p">Password
 	<input type="password" id="p" name="password"/>
@@ -24,9 +35,6 @@ include("header.php");
 </form>
 
 <?php
-#echo var_export($_GET, true);
-#echo var_export($_POST, true);
-#echo var_export($_REQUEST, true);
 if(isset($_POST["register"])){
 	if(isset($_POST["password"]) && isset($_POST["cpassword"]) && isset($_POST["email"])){
 		$password = $_POST["password"];

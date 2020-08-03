@@ -67,7 +67,6 @@ note the structure and the ":" -->
     else{
         echo "<div style='text-align: center; margin: 10px'>Sort value is: " . $sort . "</div>";
     }
-    echo "<div>You are " . var_export($_SESSION["user"]) . ".</div>";
     ?>
     <ul class="itemList">
         <!-- Here we'll loop over all our results and reuse a specific template for each iteration,
