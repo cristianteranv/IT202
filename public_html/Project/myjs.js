@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    $('form.cartForm').submit(function () {
+    $('form.cartForm').submit(function (event) {
+        event.preventDefault();
         var formValues = $(this).serialize();
         if(formValues.includes("login=false")){
             alert("You must be logged in!");
@@ -16,7 +17,8 @@ $(document).ready(function(){
             );
         }
     });
-    $('form.editQuantity').submit(function (){
+    $('form.editQuantity').submit(function (event){
+        event.preventDefault();
         var formValues = $(this).serialize();
         $.post(
             "editQuantity.php",
@@ -26,5 +28,18 @@ $(document).ready(function(){
                 location.reload(true);
             }
         );
+    });
+
+    $('form.buy').submit(function (event){
+        event.preventDefault();
+        var formValues = $(this).serialize();
+        $.post(
+            "placeOrder.php",
+            formValues,
+            function (data) {
+                alert("data: " + data);
+                location.reload(true);
+            }
+        )
     });
 });

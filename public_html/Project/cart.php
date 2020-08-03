@@ -3,11 +3,11 @@
     require_once("common.inc.php");
     echo "<title>Your cart</title><h1>Cart Items</h1>";
     if(get($_SESSION,"user",false)){
+        $userId = $_SESSION["user"]["id"];
+        $total = 0;
         try{
             $stmt = getDB()->prepare("SELECT c.id, p.name, c.price, c.quantity, c.quantity*c.price as total, c.created FROM Carts c, Products p WHERE c.userId = :userId AND c.productId = p.id ORDER BY c.created");
-            $userId = $_SESSION["user"]["id"];
             $stmt->execute(array(":userId" => $userId));
-            $total = 0;
             //total = SELECT SUM(price*quantity) as total FROM Carts WHERE userId = :userId
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);?>
             <?php if(isset($results) && count($results) > 0):?>
@@ -44,6 +44,13 @@
         catch (Exception $e){
             echo $e->getMessage();
         }
+        echo "</br></br><div>Your total is " . $total . "</div>";
+        ?>
+        <form method="post" class="buy">
+            <input type="number" name="userId" value="<?php echo $userId; ?>" hidden>
+            <input type="submit" value="Place order" id="buy" style="width: 100%; padding: 3px; margin: 2px;">
+        </form>
+<?php
     }
     else{
         alert("You need to log in");

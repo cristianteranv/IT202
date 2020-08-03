@@ -13,15 +13,15 @@ CREATE TABLE Users(
 
 CREATE TABLE Orders(
 	id int NOT NULL AUTO_INCREMENT,
-	orderUserId int NOT NULL,
-	orderDetailId int NOT NULL,
-	status VARCHAR(50),
-	orderDate DATE NOT NULL,
-	shippedDate DATE,
-	payment VARCHAR(64) NOT NULL,
+	userId int NOT NULL,
+	productId int,
+	quantity int NOT NULL,
+	price int NOT NULL,
+	orderDate timestamp default current_timestamp,
 
-	PRIMARY KEY (cartId),
-	CONSTRAINT FK_orderUserId FOREIGN KEY (orderUserId) REFERENCES Users(id)
+	PRIMARY KEY (id),
+	CONSTRAINT FK_orderUserId FOREIGN KEY (userId) REFERENCES Users(id),
+	CONSTRAINT FK_orderProductId FOREIGN KEY (productId) REFERENCES Products(id)
 );
 
 CREATE TABLE Products(
