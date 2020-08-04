@@ -26,7 +26,8 @@
             ":fname" => $fname,
             ":lname" => $lname,
             ":email" => $email,
-            ":password" => $hash
+            ":password" => $hash,
+            ":userId" => $userId
         ));
         $e = $stmt->errorInfo();
         if($e[0] != "00000"){
