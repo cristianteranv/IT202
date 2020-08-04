@@ -26,6 +26,12 @@ session_start();
         </div>
         <div id="cartOrStore">
             <ul>
+                <?php if(isset($_SESSION["user"])){
+                    echo "<li>
+                            <a href='profile.php'>Your profile</a>
+                          </li>";
+                }
+                ?>
                 <li>
                     <?php
                         if(isset($_SESSION["user"])){
