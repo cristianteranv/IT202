@@ -10,8 +10,8 @@
     <form method="POST">
         <div><label for="fname">First name</label><input type="text" name="fname" value="<?php echo get($result, "first_name"); ?>"/></div>
         <div><label for="lname">Last name</label><input type="text" name="lname" value="<?php echo get($result, "last_name"); ?>"/></div>
-        <div><label for="email">Email</label><input type="email" name="email" value="<?php echo get($result, "category"); ?>"/></div>
-        <div><label for="password">Price</label><input type="password" name="password"/></div>
+        <div><label for="email">Email</label><input type="email" name="email" value="<?php echo get($result, "email"); ?>"/></div>
+        <div><label for="password">Password</label><input type="password" name="password" value=""/></div>
         <div><input type="submit" name="editInfo" value="Save changes"/></div>
     </form>
 <?php
@@ -25,12 +25,12 @@
         $stmt->execute(array(
             ":fname" => $fname,
             ":lname" => $lname,
-            ":password" => $hash,
-            ":email" => $email
+            ":email" => $email,
+            ":password" => $hash
         ));
         $e = $stmt->errorInfo();
         if($e[0] != "00000"){
-            echo "<div>Something went wrong</div>";
+            echo "<div>Something went wrong:\n". var_export($e) ."</div>";
         }
         else{
             echo "<div>Successfully updated</div>";
