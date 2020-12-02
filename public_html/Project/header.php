@@ -39,7 +39,7 @@ session_start();
                         }
                         else{
                             echo "<a style='cursor: pointer' onclick='myFunction()'>Cart</a>";
-                            echo "<script type='text/javascript'>function myFunction(){alert('You need to log in');window.location = 'https://it202-450.herokuapp.com/login.php';}</script>";
+                            echo "<script type='text/javascript'>function myFunction(){alert('You need to log in');window.location = 'https://it202-450.herokuapp.com/public_html/Project/login.php';}</script>";
                         }
 
                     ?>
